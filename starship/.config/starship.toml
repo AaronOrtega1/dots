@@ -1,0 +1,147 @@
+[directory]
+read_only = " 󰌾"
+style = "bold #89b4fa"
+
+[directory.substitutions]
+"~" = " ~"
+"Documents" = "󰝰 "
+"Downloads" = " "
+"Music" = "🎜 "
+"Pictures" = " "
+"Videos" = " "
+"Notes" = "󰠮"
+
+[character]
+success_symbol = '[❯](#a6e3a1) '
+error_symbol = '[❯](#f38ba8) '
+
+[fossil_branch]
+symbol = " "
+style = "bold #94e2d5"  # Teal
+
+[git_branch]
+symbol = " "
+style = "bold #94e2d5"  # Teal
+
+[git_status]
+style = "fg:#94e2d5"
+conflicted = '🏳'
+up_to_date = ''
+untracked = ' '
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+stashed = ' '
+modified = ' '
+renamed = '襁 '
+deleted = ' '
+format = '[$all_status$ahead_behind ]($style)'
+
+[golang]
+symbol = " "
+style = "bold #bd93f9"  # Green
+
+[hg_branch]
+symbol = " "
+style = "bold #f38ba8"  # Red
+
+[hostname]
+ssh_symbol = " "
+style = "bold #94e2d5"  # Teal
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
+
+[package]
+symbol = "󰏗 "
+style = "bold #bd93f9"
+
+[php]
+symbol = " "
+style = "bold #bd93f9"
+
+[python]
+symbol = " "
+style = "bold #bd93f9"
+
+[ruby]
+symbol = " "
+style = "bold #bd93f9"
+
+[rust]
+symbol = "󱘗 "
+style = "bold #bd93f9"
+
+[aws]
+symbol = "  "
+style = "bold #bd93f9"
+
+[c]
+symbol = " "
+style = "bold #bd93f9"
+
+[conda]
+symbol = " "
+style = "bold #bd93f9"
+
+[docker_context]
+symbol = " "
+style = "bold #89b4fa"  # Blue
+
+[java]
+symbol = " "
+style = "bold #bd93f9"
+
+[lua]
+symbol = " "
+style = "bold #bd93f9"
+
+[nodejs]
+symbol = " "
+style = "bold #bd93f9"
+
+[cmd_duration]
+min_time = 500
+style = "bold #bd93f9"
+disabled = false
