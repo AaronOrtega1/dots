@@ -1,0 +1,111 @@
+
+import = [
+	"./keybindings/keybindings.toml",
+]
+
+# Bright colors
+[colors.bright]
+black = '#414868'
+red = '#f38ba8'
+green = '#a6e3a1'
+yellow = '#f9e2af'
+blue = '#89b4f9'
+magenta = '#cba6f7'
+cyan = '#74c7ec'
+white = '#cdd6f4'
+
+#[colors.cursor]
+#cursor = '#c0caf5'
+#text = '#1a1b26'
+
+# Normal colors
+[colors.normal]
+black = '#414868'
+red = '#f38ba8'
+green = '#a6e3a1'
+yellow = '#f9e2af'
+blue = '#89b4f9'
+magenta = '#cba6f7'
+cyan = '#74c7ec'
+white = '#cdd6f4'
+
+[colors.primary]
+background = '#1a1b26'
+foreground = '#c0caf5'
+
+# Indexed Colors
+[[colors.indexed_colors]]
+index = 16
+color = '#fab387'
+
+[[colors.indexed_colors]]
+index = 17
+color = '#f38ba8'
+
+
+
+[colors.search.focused_match]
+background = "0xadd7ff"
+foreground = "0x1b1e28"
+
+[colors.search.matches]
+background = "0xadd7ff"
+foreground = "0x1b1e28"
+
+[colors.selection]
+background = "0x303340"
+text = "CellForeground"
+
+[colors.vi_mode_cursor]
+cursor = "CellForeground"
+text = "CellBackground"
+
+[cursor]
+style = "Underline"
+vi_mode_style = "Underline"
+
+[env]
+TERM = "xterm-256color"
+
+[shell]
+program = "/bin/zsh"
+args = []
+
+[font]
+size = 12
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font.glyph_offset]
+y = 0
+
+[font.offset]
+y = 0
+x = 0
+
+[scrolling]
+history = 1000
+multiplier = 3
+
+[window]
+decorations = "none"
+opacity = 0.8
+
+[window.dimensions]
+columns = 80
+lines = 35
+
+[window.padding]
+x = 16
+y = 16
+

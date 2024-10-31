@@ -1,0 +1,13 @@
+[user]
+	name = AaronOrtega1
+	email = aaron.ortega15@outlook.es
+[merge]
+	tool = meld
+[diff]
+	tool = meld
+[credential]
+	helper = store
+[http]
+	postBuffer = 524288000
+[core]
+	autocrlf = input
