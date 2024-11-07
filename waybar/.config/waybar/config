@@ -15,7 +15,7 @@
       "clock#date",
       "network"
     ],
-    "modules-right": ["backlight", "pulseaudio", "battery", "custom/power"],
+    "modules-right": ["tray", "backlight", "pulseaudio", "battery", "custom/power"],
 
     "hyprland/workspaces": {
       "format": "{icon}",
@@ -104,7 +104,7 @@
     },
 
     "tray": {
-      "icon-size": 21,
+      "icon-size": 18,
       "spacing": 10
     },
     "backlight": {
