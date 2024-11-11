@@ -11,7 +11,7 @@ cd ~
 git clone https://github.com/AaronOrtega1/dots.git
 ```
 
-Please install the following packages:
+Please install the following package:
 
 ```bash
 Pacman -S stow
