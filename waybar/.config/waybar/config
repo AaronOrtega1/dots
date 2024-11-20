@@ -222,6 +222,7 @@
     },
     "custom/launcher": {
       "format": "",
+      "tooltip": false,
     },
     "clock#time": {
       "format": "󱑂 {:%I:%M}",
