@@ -65,7 +65,6 @@
     },
     "custom/launcher": {
       "format": "",
-      "on-click": "rofi -show drun",
       "tooltip": false
     },
     "clock#time": {
@@ -223,7 +222,6 @@
     },
     "custom/launcher": {
       "format": "",
-      "on-click": "rofi -show drun"
     },
     "clock#time": {
       "format": "󱑂 {:%I:%M}",
