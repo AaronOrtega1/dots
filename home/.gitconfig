@@ -1,6 +1,8 @@
 [user]
 	name = AaronOrtega1
 	email = aaron.ortega15@outlook.es
+[includeif "gitdir:~/Documents/Code/Work/"]
+  path = ~/.gitconfig-work
 [merge]
 	tool = meld
 [diff]
@@ -11,3 +13,5 @@
 	postBuffer = 524288000
 [core]
 	autocrlf = input
+[init]
+	defaultBranch = master
