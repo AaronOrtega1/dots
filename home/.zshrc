@@ -121,3 +121,9 @@ if command -v tmux &> /dev/null; then
 fi
 
 export PATH=$PATH:/opt/sonar-scanner/bin
+
+export MOZ_ENABLE_WAYLAND=1
+export OZONE_PLATFORM=wayland
+export GDK_SCALE=1
+export GDK_DPI_SCALE=1
+
