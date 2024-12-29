@@ -1,0 +1,363 @@
+{
+  // ===========================================================================
+  // Open json editor for settings
+  // ===========================================================================
+  "workbench.settings.editor": "json",
+
+  // ===========================================================================
+  // Font
+  // ===========================================================================
+  "editor.fontFamily": "'JetBrainsMono Nerd Font', 'GeistMono Nerf Font Mono', 'FiraCode Nerd Font Mono'",
+  "scm.inputFontFamily": "'JetBrainsMono Nerd Font', 'GeistMono Nerf Font Mono', 'FiraCode Nerd Font Mono'",
+  "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font', 'GeistMono Nerf Font Mono', 'FiraCode Nerd Font Mono'",
+  "chat.editor.fontFamily": "'JetBrainsMono Nerd Font', 'GeistMono Nerf Font Mono', 'FiraCode Nerd Font Mono'",
+  "debug.console.fontFamily": "'JetBrainsMono Nerd Font', 'GeistMono Nerf Font Mono', 'FiraCode Nerd Font Mono'",
+  "editor.codeLensFontFamily": "'JetBrainsMono Nerd Font', 'GeistMono Nerf Font Mono', 'FiraCode Nerd Font Mono'",
+  "notebook.output.fontFamily": "'JetBrainsMono Nerd Font', 'GeistMono Nerf Font Mono', 'FiraCode Nerd Font Mono'",
+  "markdown.preview.fontFamily": "'JetBrainsMono Nerd Font', 'GeistMono Nerf Font Mono', 'FiraCode Nerd Font Mono'",
+  "editor.inlayHints.fontFamily": "'JetBrainsMono Nerd Font', 'GeistMono Nerf Font Mono', 'FiraCode Nerd Font Mono'",
+  "editor.fontSize": 18,
+  "terminal.integrated.fontSize": 18,
+
+  // ===========================================================================
+  // Editor
+  // ===========================================================================
+  "editor.fontLigatures": true,
+  "editor.lineNumbers": "relative",
+  "editor.wordWrap": "on",
+  "editor.formatOnSave": true,
+  "editor.autoIndent": "full",
+  "editor.formatOnType": true,
+  "editor.guides.indentation": true,
+  "editor.guides.bracketPairs": true,
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.matchBrackets": "never",
+  "editor.multiCursorMergeOverlapping": false,
+  "editor.suggestSelection": "first",
+  "editor.linkedEditing": true,
+  "editor.mouseWheelZoom": true,
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "editor.overviewRulerBorder": false,
+  "editor.insertSpaces": false,
+  "editor.smoothScrolling": false,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.lightbulb.enabled": "off",
+  "editor.stickyScroll.enabled": false,
+  "editor.scrollbar.vertical": "hidden",
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.verticalScrollbarSize": 0,
+  "editor.scrollbar.horizontalScrollbarSize": 0,
+  "editor.hideCursorInOverviewRuler": true,
+
+  // ===========================================================================
+  // Format
+  // ===========================================================================
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "prettier.printWidth": 100,
+
+  // ===========================================================================
+  // Misc
+  // ===========================================================================
+  "workbench.startupEditor": "none",
+  "files.trimTrailingWhitespace": true,
+  "explorer.compactFolders": false,
+  "explorer.confirmDragAndDrop": false,
+  "workbench.editor.closeOnFileDelete": true,
+  "git.openRepositoryInParentFolders": "never",
+  "git.confirmSync": false,
+  "code-runner.runInTerminal": true,
+  "color-highlight.markRuler": false,
+  "window.menuBarVisibility": "toggle",
+  "notebook.lineNumbers": "on",
+  "security.workspace.trust.untrustedFiles": "open",
+
+  // ===========================================================================
+  // File Exclude
+  // ===========================================================================
+  "files.exclude": {
+    "node_modules": true,
+    "out": true,
+    ".vscode": true
+  },
+
+  // ===========================================================================
+  // Theme
+  // ===========================================================================
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.productIconTheme": "fluent-icons",
+  "workbench.iconTheme": "symbols",
+  "workbench.colorCustomizations": {
+    "[Aura Dark]": {
+      "editor.background": "#110f17",
+      "terminal.background": "#110f17",
+      "activityBar.background": "#110f17",
+      "statusBar.background": "#110f17",
+      "editorGroupHeader.tabsBackground": "#110f17",
+      "tab.inactiveBackground": "#110f17",
+      "titleBar.activeBackground": "#110f17",
+      "titleBar.inactiveBackground": "#110f17"
+    },
+    "[Catppuccin Mocha]": {
+      // Title Bar
+      "titleBar.activeBackground": "#181825",
+      "titleBar.inactiveBackground": "#181825",
+      "titleBar.border": "#1E1E2E",
+      "titleBar.activeForeground": "#CDD6F4",
+      // Activity Bar
+      "activityBar.background": "#181825",
+      "activityBar.border": "#1E1E2E",
+      "activityBar.foreground": "#CDD6F4",
+      "activityBarBadge.background": "#89B4FA",
+      "activityBarBadge.foreground": "#1E1E2E",
+      // Tabs
+      "tab.activeBorderTop": "#B4BEFE",
+      "tab.activeBackground": "#181825",
+      "tab.inactiveBackground": "#181825",
+      "tab.border": "#1E1E2E",
+      // Editor Group
+      "editorGroupHeader.tabsBorder": "#181825",
+      "editorGroupHeader.tabsBackground": "#1E1E2E",
+      "editorGroup.border": "#1E1E2E",
+      "foreground": "#CDD6F4",
+      "editorCursor.foreground": "#CDD6F490",
+      "selection.background": "#585B70",
+      "menu.selectionForeground": "#CDD6F4",
+      "menu.selectionBackground": "#585B70",
+      "editor.selectionForeground": "#CDD6F4",
+      "editor.selectionBackground": "#585B7050",
+      "editor.lineHighlightBackground": "#1E1E2E",
+      // Side bar
+      "sideBar.border": "#1E1E2E",
+      "sideBar.foreground": "#CDD6F4",
+      // Status bar
+      "statusBarItem.remoteBackground": "#CBA6F7",
+      "statusBarItem.remoteForeground": "#181825",
+      "statusBar.debuggingBackground": "#181825",
+      "statusBar.background": "#181825",
+      "statusBar.border": "#1E1E2E",
+      "statusBar.foreground": "#CDD6F4",
+      // Panel
+      "panel.background": "#181825",
+      // Suggestion box
+      "editorSuggestWidget.background": "#181825",
+      "editorSuggestWidget.border": "#CBA6F7",
+      "editorSuggestWidget.foreground": "#CDD6F4",
+      "editorSuggestWidget.selectedBackground": "#585B7050",
+      "editorSuggestWidget.highlightForeground": "#CBA6F7",
+      // Match
+      "list.highlightForeground": "#CBA6F7",
+      "list.focusForeground": "#B4BEFE",
+      // extras
+      "editor.background": "#181825",
+      "editorGutter.background": "#181826",
+      "breadcrumb.background": "#181826",
+      "breadcrumbPicker.background": "#181826",
+      "quickInput.border": "#1E1E2E"
+    },
+    "[Kanagawa]": {
+      // Title Bar
+      "titleBar.activeBackground": "#1f1f28",
+      "titleBar.inactiveBackground": "#1f1f28",
+      "titleBar.border": "#343A41",
+      "titleBar.activeForeground": "#CAD3F5",
+      // Activity Bar
+      "activityBar.background": "#1f1f28",
+      "activityBar.border": "#343A41",
+      "activityBar.foreground": "#CAD3F5",
+      "activityBarBadge.background": "#CAD3F5",
+      "activityBarBadge.foreground": "#1f1f28",
+      // Tabs
+      "tab.activeBorderTop": "#7E9CD8",
+      "tab.activeBackground": "#1f1f28",
+      "tab.inactiveBackground": "#1f1f28",
+      "tab.border": "#343A41",
+      // Editor Group
+      "editorGroupHeader.tabsBorder": "#343A41",
+      "editorGroupHeader.tabsBackground": "#1f1f28",
+      "editorGroup.border": "#343A41",
+      "foreground": "#CAD3F5",
+      "editorCursor.foreground": "#CAD3F590",
+      "selection.background": "#CAD3F5",
+      "menu.selectionForeground": "#CAD3F5",
+      "menu.selectionBackground": "#CAD3F5",
+      "editor.selectionForeground": "#CAD3F5",
+      "editor.selectionBackground": "#CAD3F550",
+      "editor.lineHighlightBackground": "#2a2a33",
+      // Side bar
+      "sideBar.border": "#343A41",
+      "sideBar.foreground": "#CAD3F5",
+      // Status bar
+      "statusBarItem.remoteBackground": "#957FB8",
+      "statusBarItem.remoteForeground": "#1f1f28",
+      "statusBar.debuggingBackground": "#1f1f28",
+      "statusBar.background": "#1f1f28",
+      "statusBar.border": "#343A41",
+      "statusBar.foreground": "#CAD3F5",
+      // Panel
+      "panel.background": "#1c2128",
+      // Suggestion box
+      "editorSuggestWidget.background": "#1f1f28",
+      "editorSuggestWidget.border": "#957FB8",
+      "editorSuggestWidget.foreground": "#CAD3F5",
+      "editorSuggestWidget.selectedBackground": "#CAD3F550",
+      "editorSuggestWidget.highlightForeground": "#957FB8",
+      // Match
+      "list.highlightForeground": "#957FB8",
+      "list.focusForeground": "#957FB8"
+    }
+  },
+  "editor.tokenColorCustomizations": {
+    "[*Light*]": {
+      "textMateRules": [
+        {
+          "scope": "ref.matchtext",
+          "settings": {
+            "foreground": "#000"
+          }
+        }
+      ]
+    },
+    "[*Dark*]": {
+      "textMateRules": [
+        {
+          "scope": "ref.matchtext",
+          "settings": {
+            "foreground": "#fff"
+          }
+        }
+      ]
+    },
+    "[Kanagawa]": {
+      "comments": {
+        "foreground": "#658594"
+      },
+      "textMateRules": [
+        {
+          "scope": "entity.name.tag",
+          "settings": {
+            "foreground": "#FF5D62"
+          }
+        }
+      ]
+    }
+  },
+
+  // ===========================================================================
+  // APC - UI customizer
+  // ===========================================================================
+  "window.titleBarStyle": "custom",
+  "workbench.sideBar.location": "right",
+  // "workbench.activityBar.location": "hidden",
+  "workbench.editor.editorActionsLocation": "hidden",
+  "workbench.layoutControl.enabled": false,
+  "workbench.editor.showTabs": "multiple",
+  "breadcrumbs.filePath": "on",
+  "window.commandCenter": false,
+  "apc.activityBar": {
+    "position": "bottom",
+    "size": 32,
+    "itemSize": 32,
+    "itemMargin": 0
+  },
+  "apc.electron": {
+    "backgroundColor": "#1f1f28",
+    "frame": true,
+    "transparent": true,
+    "titleBarStyle": "hiddenInset",
+    "vibrancy": "ultra-dark",
+    "trafficLightPosition": {
+      "x": 12,
+      "y": 10
+    }
+  },
+  "apc.sidebar.titlebar": {
+    "height": 32
+  },
+  "apc.statusBar": {
+    "position": "editor-bottom",
+    "height": 32,
+    "fontSize": 12
+  },
+  "apc.stylesheet": {
+    ".decorationsOverviewRuler": "display: none;",
+    ".editor-group-container.empty": "-webkit-app-region: drag;",
+    ".editor-group-container .title": "pointer-events: none;",
+    ".tabs-and-actions-container > .editor-actions": "display: none !important",
+    ".inline-tabs-placeholder": "display: none !important",
+    ".monaco-editor .scroll-decoration": "box-shadow: none !important",
+    // Command Palette Center
+    ".quick-input-widget": {
+      "border": "1px solid #957FB8 !important;",
+      "transform": "translateY(-50%) !important;",
+      "top": "47% !important",
+      "box-shadow": "0 0 60px 0 rgba(0,0,0,0.2) !important",
+      "width": "700px !important",
+      "left": "calc(50% - 50px) !important"
+    },
+    // Find and Replace Widget
+    ".editor-widget.find-widget.visible": {
+      "background": "#2a2a33 !important;", // Background color
+      "border": "1px solid #3e465b !important;", // Border color
+      "box-shadow": "0 0 8px rgba(0,0,0,0.2) !important;", // Shadow effect
+      "border-radius": "4px !important;", // Rounded corners
+      "right": "4px !important;"
+    },
+    ".editor-widget.find-widget .find-input, .editor-widget.find-widget .replace-input": {
+      "background": "#1e1e28 !important;", // Input background color
+      "color": "#c0c0c0 !important;", // Input text color
+      "border": "1px solid #3e465b !important;", // Input border color
+      "border-radius": "4px !important;", // Rounded corners for inputs
+      "padding": "4px 8px !important;" // Padding inside inputs
+    },
+    ".editor-widget.find-widget .find-input:focus, .editor-widget.find-widget .replace-input:focus": {
+      "border-color": "#5f8fcf !important;" // Border color on focus
+    },
+    ".monaco-editor .find-widget .monaco-sash": {
+      "background-color": "#957FB8 !important"
+    }
+  },
+
+  // ===========================================================================
+  // Neovim
+  // ===========================================================================
+  "vscode-neovim.useWSL": true,
+  "vscode-neovim.neovimExecutablePaths.linux": "/bin/nvim",
+  "vscode-neovim.neovimInitVimPaths.linux": "~/.config/nvim/init.lua",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+
+  // ===========================================================================
+  // Zen Mode
+  // ===========================================================================
+  "zenMode.hideLineNumbers": false,
+  "zenMode.centerLayout": false,
+  "zenMode.showTabs": "none",
+  "zenMode.hideStatusBar": false,
+  "zenMode.hideActivityBar": false,
+
+  // ===========================================================================
+  // Remote - SSH
+  // ===========================================================================
+  "remote.autoForwardPortsSource": "hybrid",
+
+  // ===========================================================================
+  // TODO: Organize Later
+  // ===========================================================================
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "github.copilot.editor.enableAutoCompletions": true,
+  "symbols.hidesExplorerArrows": true,
+  "editor.minimap.enabled": false,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "sqldeveloper.telemetry.enabled": false,
+  "sqldeveloper.sqlHistory.historyLimit": 500
+}
