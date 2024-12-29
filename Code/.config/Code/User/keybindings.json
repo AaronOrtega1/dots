@@ -2,6 +2,7 @@
   //=====================================================================================================================
   // Navigation
   //=====================================================================================================================
+  // Navigate from division
   {
     "key": "ctrl-h",
     "command": "workbench.action.navigateLeft"
@@ -18,11 +19,13 @@
     "key": "ctrl-k",
     "command": "workbench.action.navigateUp"
   },
+  // Show open editors
   {
     "key": "space ,",
     "command": "workbench.action.showAllEditors",
     "when": "neovim.mode == 'normal' && (editorTextFocus || !inputFocus)"
   },
+  // Control file explorer
   {
     "key": "space e",
     "command": "runCommands",
@@ -50,6 +53,13 @@
     "command": "workbench.action.toggleSidebarVisibility",
     "when": "neovim.mode == 'normal' && editorTextFocus && foldersViewVisible"
   },
+  // toggle sidebar
+  {
+    "key": "escape",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "sideBarFocus"
+  },
+  // Navigate between tabs
   {
     "key": "shift-l",
     "command": "workbench.action.nextEditorInGroup",
@@ -60,6 +70,7 @@
     "command": "workbench.action.previousEditorInGroup",
     "when": "(neovim.mode == 'normal' || neovim.mode == 'visual') && (editorTextFocus || !inputFocus)"
   },
+  // Open terminal
   {
     "key": "space t",
     "command": "terminal.focus",
@@ -68,6 +79,7 @@
   //=====================================================================================================================
   // Coding
   //=====================================================================================================================
+  // Move lines up and down
   {
     "key": "shift-j",
     "command": "editor.action.moveLinesDownAction",
@@ -78,11 +90,13 @@
     "command": "editor.action.moveLinesUpAction",
     "when": "neovim.mode != 'insert' && editorTextFocus"
   },
+  // Show hover
   {
     "key": "shift-k",
     "command": "editor.action.showHover",
     "when": "neovim.mode == 'normal' && editorTextFocus"
   },
+  //
   {
     "key": "space c r",
     "command": "editor.action.rename",
@@ -93,46 +107,61 @@
     "command": "workbench.action.gotoSymbol",
     "when": "neovim.mode == 'normal' && editorTextFocus"
   },
+  // Close active editor
   {
     "key": "space q",
     "command": "workbench.action.closeActiveEditor",
     "when": "neovim.mode == 'normal' && editorTextFocus"
   },
+  // Quick open file
   {
     "key": "space space",
     "command": "workbench.action.quickOpen",
     "when": "neovim.mode == 'normal' && (editorTextFocus || !inputFocus)"
   },
+  // Go to definition
   {
     "key": "space g d",
     "command": "editor.action.revealDefinition",
     "when": "neovim.mode == 'normal' && editorTextFocus"
   },
+  // Go to references
   {
     "key": "space g r",
     "command": "editor.action.goToReferences",
     "when": "neovim.mode == 'normal' && editorTextFocus"
   },
+  // Go to implementation
+  {
+    "key": "space g i",
+    "command": "editor.action.goToImplementation",
+    "when": "neovim.mode == 'normal' && editorTextFocus"
+  },
+  // Find and replace
   {
     "key": "space s r",
     "command": "editor.action.startFindReplaceAction",
     "when": "neovim.mode == 'normal' && (editorTextFocus || !inputFocus)"
   },
+  // Find and replace in files
   {
     "key": "space s shift-r",
     "command": "workbench.action.replaceInFiles",
     "when": "neovim.mode == 'normal' && (editorTextFocus || !inputFocus)"
   },
+  // Find in file
   {
     "key": "space s g",
     "command": "actions.find",
     "when": "neovim.mode == 'normal' && (editorTextFocus || !inputFocus)"
   },
+  // Find in files
   {
     "key": "space s shift-g",
     "command": "workbench.action.findInFiles",
     "when": "neovim.mode == 'normal' && (editorTextFocus || !inputFocus)"
   },
+  // Toggle folds
   {
     "key": "z a",
     "command": "editor.toggleFold",
@@ -141,46 +170,55 @@
   //=====================================================================================================================
   // File Explorer
   //=====================================================================================================================
+  // Rename File in Explorer
   {
     "key": "r",
     "command": "renameFile",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
+  // Copy File in Explorer
   {
     "key": "c",
     "command": "filesExplorer.copy",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
+  // Paste File in Explorer
   {
     "key": "p",
     "command": "filesExplorer.paste",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
+  // Cut File in Explorer
   {
     "key": "x",
     "command": "filesExplorer.cut",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
+  // Delete File in Explorer
   {
     "key": "d",
     "command": "deleteFile",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
+  // New File in Explorer
   {
     "key": "a",
     "command": "explorer.newFile",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
+  // New Directory in Explorer
   {
     "key": "shift-a",
     "command": "explorer.newFolder",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
+  // Open File to the Side from Explorer
   {
     "key": "s",
     "command": "explorer.openToSide",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
+  // Open File to the Bottom from Explorer
   {
     "key": "shift-s",
     "command": "runCommands",
@@ -193,11 +231,13 @@
       ]
     }
   },
+  // Open File from Explorer and Focus
   {
     "key": "enter",
     "command": "explorer.openAndPassFocus",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceIsFolder && !inputFocus"
   },
+  // Open Folder from Explorer
   {
     "key": "enter",
     "command": "list.toggleExpand",
@@ -206,7 +246,7 @@
   //=====================================================================================================================
   // Nice to have
   //=====================================================================================================================
-  // Navegar hacia abajo en las sugerencias
+  // Navigate down in suggestions
   {
     "key": "ctrl+j",
     "command": "editor.action.triggerSuggest",
@@ -217,25 +257,25 @@
     "command": "selectNextSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible"
   },
-  // Navegar hacia arriba en las sugerencias
+  // Navigate up in suggestions
   {
     "key": "ctrl+k",
     "command": "selectPrevSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible"
   },
-  // Aceptar una sugerencia de GitHub Copilot
+  // Accept a suggestion from GitHub Copilot
   {
     "key": "alt+l",
     "command": "editor.action.inlineSuggest.commit",
     "when": "inlineSuggestionVisible"
   },
-  // Abrir el control de fuente (Source Control)
+  // Open Source Control
   {
     "key": "space g s",
     "command": "workbench.view.scm",
     "when": "neovim.mode == 'normal' && (editorTextFocus || !inputFocus)"
   },
-  // Abrir y cerrar el chat de GitHub Copilot
+  // Open and close GitHub Copilot chat
   {
     "key": "space o c",
     "command": "workbench.action.chat.open",
@@ -246,47 +286,62 @@
     "command": "workbench.action.closeAuxiliaryBar",
     "when": "neovim.mode == 'normal' && (editorTextFocus || !inputFocus)"
   },
+  // Save all files
   {
     "key": "ctrl-s",
     "command": "saveAll"
   },
   {
-    "key": "ctrl-b",
-    "command": "workbench.action.toggleSidebarVisibility"
+    "key": "space f c",
+    "command": "workbench.action.openSettings",
+    "when": "neovim.mode == 'normal' && (editorTextFocus || !inputFocus)"
   },
+  // open keybindings
   {
     "key": "space s k",
     "command": "workbench.action.openGlobalKeybindingsFile",
     "when": "neovim.mode == 'normal' && (editorTextFocus || !inputFocus)"
   },
+  // close terminal
   {
     "key": "escape",
     "command": "workbench.action.togglePanel",
     "when": "terminalFocus"
   },
+  // focus next terminal
   {
     "key": "ctrl-a",
     "command": "workbench.action.terminal.focusNext",
     "when": "terminalFocus"
   },
+  // focus previous terminal
   {
     "key": "ctrl-b",
     "command": "workbench.action.terminal.focusPrevious",
     "when": "terminalFocus"
   },
+  // new terminal
   {
     "key": "ctrl-n",
     "command": "workbench.action.terminal.new",
     "when": "terminalFocus"
   },
+  // open command palette
   {
     "key": "space ;",
     "command": "workbench.action.showCommands",
     "when": "neovim.mode == 'normal' && (editorTextFocus || !inputFocus)"
   },
+  // open TODO tree
   {
     "key": "space s t",
     "command": "workbench.view.extension.todo-tree-container",
+    "when": "neovim.mode == 'normal' && (editorTextFocus || !inputFocus)"
+  },
+  // open extensions
+  {
+    "key": "space l",
+    "command": "workbench.view.extensions",
     "when": "neovim.mode == 'normal' && (editorTextFocus || !inputFocus)"
   }
 ]

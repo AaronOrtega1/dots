@@ -79,6 +79,7 @@ alias sonarstart='/opt/sonarqube/bin/linux-x86-64/sonar.sh start'
 alias sonarstop='/opt/sonarqube/bin/linux-x86-64/sonar.sh stop'
 alias sonarstatus='/opt/sonarqube/bin/linux-x86-64/sonar.sh status'
 alias sonar-scanner='/opt/sonarscanner/bin/sonar-scanner'
+alias code='env GDK_BACKEND=wayland OZONE_PLATFORM=wayland code --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto 2>/dev/null'
 
 # Shell integration
 eval "$(fzf --zsh)"
@@ -122,8 +123,9 @@ fi
 
 export PATH=$PATH:/opt/sonar-scanner/bin
 
-export MOZ_ENABLE_WAYLAND=1
-export OZONE_PLATFORM=wayland
 export GDK_SCALE=1
 export GDK_DPI_SCALE=1
-
+export GDK_BACKEND=wayland
+export QT_QPA_PLATFORM=wayland
+export MOZ_ENABLE_WAYLAND=1
+export OZONE_PLATFORM=wayland
