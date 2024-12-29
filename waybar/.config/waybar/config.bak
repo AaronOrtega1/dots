@@ -20,7 +20,7 @@
     "modules-right": [
       "tray",
       "backlight",
-      "pulseaudio",
+      "pipewire",
       "battery",
       "custom/power"
     ],
@@ -132,11 +132,14 @@
       "min-length": 7,
       "max-length": 7
     },
-    "pulseaudio": {
+    "pipewire": {
       "tooltip": false,
       "format": "{icon}  {volume}%",
       "format-muted": "  {volume}%",
-      "on-click": "pavucontrol",
+      "on-click": "~/.config/waybar/scripts/volumecontrol.sh -o m",
+      "on-click-right": "pavucontrol",
+      "on-scroll-up": "~/.config/waybar/scripts/volumecontrol.sh -o i",
+      "on-scroll-down": "~/.config/waybar/scripts/volumecontrol.sh -o d",
       "scroll-step": 5,
       "format-icons": {
         "headphone": "󰋋",
@@ -200,7 +203,7 @@
     ],
     "modules-right": [
       "custom/media",
-      "pulseaudio",
+      "pipewire",
       "battery",
       "custom/power"
     ],
@@ -316,7 +319,7 @@
       "min-length": 7,
       "max-length": 7
     },
-    "pulseaudio": {
+    "pipewire": {
       "tooltip": false,
       "format": "{icon}  {volume}%",
       "format-muted": "  {volume}%",

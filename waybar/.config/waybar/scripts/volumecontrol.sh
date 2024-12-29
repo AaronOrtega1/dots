@@ -27,7 +27,7 @@ notify_vol() {
 }
 
 notify_mute() {
-    mute=$(pamixer "${srce}" --get-mute | cat)
+    mute=$(pw-cli info | grep "Mute" | awk '{print $2}')
     [ "${srce}" == "--default-source" ] && dvce="mic" || dvce="speaker"
     if [ "${mute}" == "true" ]; then
         notify-send -a "t2" -r 91190 -t 800 -i "${icodir}/muted-${dvce}.svg" "muted" "${nsink}"
@@ -36,15 +36,10 @@ notify_mute() {
     fi
 }
 
-action_pamixer() {
-    pamixer "${srce}" -"${1}" "${step}"
-    vol=$(pamixer "${srce}" --get-volume | cat)
-}
-
-action_playerctl() {
-    [ "${1}" == "i" ] && pvl="+" || pvl="-"
-    playerctl --player="${srce}" volume 0.0"${step}""${pvl}"
-    vol=$(playerctl --player="${srce}" volume | awk '{ printf "%.0f\n", $0 * 100 }')
+action_pw() {
+    # Using pw-cli or pw-mixer for PipeWire control
+    pw-mixer --set-volume "${vol}" "${srce}"
+    vol=$(pw-cli info | grep "Volume" | awk '{ print $2 }')
 }
 
 select_output() {
@@ -66,15 +61,15 @@ select_output() {
 while getopts iops: DeviceOpt; do
     case "${DeviceOpt}" in
     i)
-        nsink=$(pamixer --list-sources | awk -F '"' 'END {print $(NF - 1)}')
+        nsink=$(pw-cli info | grep "Input" | awk -F '"' '{print $2}')
         [ -z "${nsink}" ] && echo "ERROR: Input device not found..." && exit 0
-        ctrl="pamixer"
+        ctrl="pw-mixer"
         srce="--default-source"
         ;;
     o)
-        nsink=$(pamixer --get-default-sink | awk -F '"' 'END{print $(NF - 1)}')
+        nsink=$(pw-cli info | grep "Output" | awk -F '"' '{print $2}')
         [ -z "${nsink}" ] && echo "ERROR: Output device not found..." && exit 0
-        ctrl="pamixer"
+        ctrl="pw-mixer"
         srce=""
         ;;
     p)
@@ -84,7 +79,7 @@ while getopts iops: DeviceOpt; do
         srce="${nsink}"
         ;;
     s)
-        default_sink="$(pamixer --get-default-sink | awk -F '"' 'END{print $(NF - 1)}')"
+        default_sink="$(pw-cli info | grep "Default Sink" | awk -F '"' '{print $2}')"
         export selected_sink="$(select_output "${@}" | rofi -dmenu -select "${default_sink}" -config "${confDir}/rofi/notification.rasi")"
         select_output "$selected_sink"
         exit
