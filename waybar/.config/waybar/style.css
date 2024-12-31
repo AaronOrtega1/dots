@@ -3,7 +3,8 @@
 @define-color background        #181825;
 @define-color foreground        #cdd6f4;
 @define-color alert             #f28fad;
-@define-color active            #abe9b3;
+/* @define-color active            #abe9b3; */
+@define-color active            #89b4fa;
 @define-color hover             #e8a2af;
 
 * {
@@ -26,7 +27,6 @@ window#waybar.hidden {
   margin-top: 6px;
   padding-left: 10px;
   padding-right: 10px;
-  border-radius: 10px;
   transition: none;
   color: transparent;
   background: transparent;
@@ -37,12 +37,9 @@ window#waybar.hidden {
 /* ================================================ */
 #workspaces {
   margin-top: 6px;
-  margin-left: 8px;
-  padding-left: 6px;
-  padding-right: 10px;
+  margin-left: 12px;
   font-size: 4px;
   margin-bottom: 0px;
-  border-radius: 10px;
   background: @background;
   transition: none;
 }
@@ -62,7 +59,10 @@ window#waybar.hidden {
 }
 
 #workspaces button.active {
-  color: @active;
+  color: @foreground;
+  border-top: 2px solid @active;
+  border-bottom: 2px solid @active;
+  /* background: @foreground; */
 }
 
 #workspaces button:hover {
@@ -82,7 +82,6 @@ window#waybar.hidden {
   margin-left: 8px;
   padding-left: 7px;
   padding-right: 12px;
-  border-radius: 10px;
   transition: none;
   background: @background;
   color: @foreground;
@@ -102,7 +101,6 @@ window#waybar.hidden {
   padding-left: 10px;
   margin-bottom: 0px;
   padding-right: 10px;
-  border-radius: 10px;
   transition: none;
   background: @background;
   color: @foreground;
@@ -114,7 +112,6 @@ window#waybar.hidden {
   margin-left: 8px;
   padding-left: 7px;
   padding-right: 12px;
-  border-radius: 10px;
   transition: none;
   background: @background;
   color: @foreground;
@@ -139,7 +136,6 @@ window#waybar.hidden {
   padding-left: 10px;
   padding-right: 10px;
   margin-bottom: 0px;
-  border-radius: 10px;
   transition: none;
   background: @background;
   color: @foreground;
@@ -176,7 +172,6 @@ window#waybar.hidden {
   margin-right: 8px;
   padding-left: 7px;
   padding-right: 12px;
-  border-radius: 10px;
   transition: none;
   background: @background;
   color: @foreground;

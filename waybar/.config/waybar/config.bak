@@ -20,7 +20,7 @@
     "modules-right": [
       "tray",
       "backlight",
-      "pipewire",
+      "pulseaudio",
       "battery",
       "custom/power"
     ],
@@ -132,14 +132,11 @@
       "min-length": 7,
       "max-length": 7
     },
-    "pipewire": {
+    "pulseaudio": {
       "tooltip": false,
       "format": "{icon}  {volume}%",
       "format-muted": "  {volume}%",
-      "on-click": "~/.config/waybar/scripts/volumecontrol.sh -o m",
-      "on-click-right": "pavucontrol",
-      "on-scroll-up": "~/.config/waybar/scripts/volumecontrol.sh -o i",
-      "on-scroll-down": "~/.config/waybar/scripts/volumecontrol.sh -o d",
+      "on-click": "pavucontrol",
       "scroll-step": 5,
       "format-icons": {
         "headphone": "󰋋",
@@ -203,7 +200,8 @@
     ],
     "modules-right": [
       "custom/media",
-      "pipewire",
+      "tray",
+      "pulseaudio",
       "battery",
       "custom/power"
     ],
@@ -300,6 +298,10 @@
       "min-length": 5,
       "max-length": 35
     },
+    "tray": {
+      "icon-size": 18,
+      "spacing": 10
+    },
     "backlight": {
       "format": "{icon} {percent}%",
       "format-icons": [
@@ -319,14 +321,11 @@
       "min-length": 7,
       "max-length": 7
     },
-    "pipewire": {
+    "pulseaudio": {
       "tooltip": false,
       "format": "{icon}  {volume}%",
       "format-muted": "  {volume}%",
-      "on-click": "~/.config/waybar/scripts/volumecontrol.sh -o m",
-      "on-click-right": "pavucontrol",
-      "on-scroll-up": "~/.config/waybar/scripts/volumecontrol.sh -o i",
-      "on-scroll-down": "~/.config/waybar/scripts/volumecontrol.sh -o d",
+      "on-click": "pavucontrol",
       "scroll-step": 5,
       "format-icons": {
         "headphone": "󰋋",

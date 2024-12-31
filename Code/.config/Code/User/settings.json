@@ -30,7 +30,7 @@
   "editor.formatOnType": true,
   "editor.guides.indentation": true,
   "editor.guides.bracketPairs": true,
-  "editor.tabSize": 2,
+  "editor.tabSize": 4,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.matchBrackets": "never",
   "editor.multiCursorMergeOverlapping": false,
@@ -359,5 +359,6 @@
   "editor.minimap.enabled": false,
   "liveServer.settings.donotShowInfoMsg": true,
   "sqldeveloper.telemetry.enabled": false,
-  "sqldeveloper.sqlHistory.historyLimit": 500
+  "sqldeveloper.sqlHistory.historyLimit": 500,
+  "git.autofetch": true
 }

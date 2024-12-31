@@ -6,7 +6,8 @@
     "output": "!DP-1",
     "modules-left": [
       "hyprland/workspaces",
-      "custom/wallpaper"
+      "custom/wallpaper",
+      "tray"
     ],
     "modules-center": [
       "custom/cpuinfo",
@@ -18,7 +19,6 @@
       "network"
     ],
     "modules-right": [
-      "tray",
       "backlight",
       "pulseaudio",
       "battery",
@@ -28,9 +28,16 @@
       "format": "{icon}",
       "on-click": "activate",
       "format-icons": {
-        "urgent": "",
-        "active": "",
-        "default": ""
+        "1": "一",
+        "2": "二",
+        "3": "三",
+        "4": "四",
+        "5": "五",
+        "6": "六",
+        "7": "七",
+        "8": "八",
+        "9": "九",
+        "10": "十"
       },
       "persistent-workspaces": {
         "1": [],
@@ -47,6 +54,10 @@
       "interval": 600,
       "min-length": 2,
       "max-length": 2
+    },
+    "tray": {
+      "icon-size": 18,
+      "spacing": 10
     },
     "custom/cpuinfo": {
       "exec": "~/.config/waybar/scripts/cpuinfo.sh",
@@ -109,10 +120,6 @@
       "min-length": 8,
       "max-length": 8
     },
-    "tray": {
-      "icon-size": 18,
-      "spacing": 10
-    },
     "backlight": {
       "format": "{icon} {percent}%",
       "format-icons": [
@@ -126,7 +133,7 @@
         "",
         ""
       ],
-      "tooltip": false,
+      "tooltip": true,
       "on-scroll-up": "~/.config/waybar/scripts/brightnesscontrol.sh -o i",
       "on-scroll-down": "~/.config/waybar/scripts/brightnesscontrol.sh -o d",
       "min-length": 7,
@@ -187,7 +194,8 @@
     "output": "DP-1",
     "modules-left": [
       "hyprland/workspaces",
-      "custom/wallpaper"
+      "custom/wallpaper",
+      "tray"
     ],
     "modules-center": [
       "custom/cpuinfo",
@@ -208,9 +216,16 @@
       "format": "{icon}",
       "on-click": "activate",
       "format-icons": {
-        "urgent": "",
-        "active": "",
-        "default": ""
+        "1": "一",
+        "2": "二",
+        "3": "三",
+        "4": "四",
+        "5": "五",
+        "6": "六",
+        "7": "七",
+        "8": "八",
+        "9": "九",
+        "10": "十"
       },
       "persistent-workspaces": {
         "1": [],
@@ -227,6 +242,10 @@
       "interval": 600,
       "min-length": 2,
       "max-length": 2
+    },
+    "tray": {
+      "icon-size": 18,
+      "spacing": 10
     },
     "custom/cpuinfo": {
       "exec": "~/.config/waybar/scripts/cpuinfo.sh",

@@ -162,11 +162,12 @@
     "when": "neovim.mode == 'normal' && (editorTextFocus || !inputFocus)"
   },
   // Toggle folds
-  {
-    "key": "z a",
-    "command": "editor.toggleFold",
-    "when": "editorTextFocus && foldingEnabled && neovim.mode = 'normal'"
-  },
+  // {
+  //   "key": "z a",
+  //   "command": "editor.toggleFold",
+  //   "when": "editorTextFocus && foldingEnabled && neovim.mode = 'normal'"
+  //   "when": "neovim.mode = 'normal'"
+  // },
   //=====================================================================================================================
   // File Explorer
   //=====================================================================================================================
