@@ -7,7 +7,7 @@
     "modules-left": [
       "hyprland/workspaces",
       "custom/wallpaper",
-      "tray"
+      "custom/keyboard-layout"
     ],
     "modules-center": [
       "custom/cpuinfo",
@@ -43,8 +43,7 @@
         "1": [],
         "2": [],
         "3": [],
-        "4": [],
-        "5": []
+        "4": []
       }
     },
     "custom/wallpaper": {
@@ -54,6 +53,12 @@
       "interval": 600,
       "min-length": 2,
       "max-length": 2
+    },
+    "custom/keyboard-layout": {
+      "format": "  {}",
+      "exec": "~/.config/waybar/scripts/fcitx5-status.sh",
+      "interval": 1,
+      "tooltip": false
     },
     "tray": {
       "icon-size": 18,
@@ -195,7 +200,7 @@
     "modules-left": [
       "hyprland/workspaces",
       "custom/wallpaper",
-      "tray"
+      "custom/keyboard-layout"
     ],
     "modules-center": [
       "custom/cpuinfo",
@@ -231,8 +236,7 @@
         "1": [],
         "2": [],
         "3": [],
-        "4": [],
-        "5": []
+        "4": []
       }
     },
     "custom/wallpaper": {
@@ -242,6 +246,12 @@
       "interval": 600,
       "min-length": 2,
       "max-length": 2
+    },
+    "custom/keyboard-layout": {
+      "format": "  {}",
+      "exec": "~/.config/waybar/scripts/fcitx5-status.sh",
+      "interval": 1,
+      "tooltip": false
     },
     "tray": {
       "icon-size": 18,
