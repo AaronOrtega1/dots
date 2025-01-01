@@ -53,9 +53,10 @@ window#waybar.hidden {
 }
 
 #workspaces button.urgent {
-  color: @alert;
   background: transparent;
   font-size: 4px;
+  border-top: 2px solid @alert;
+  border-bottom: 2px solid @alert;
 }
 
 #workspaces button.active {
