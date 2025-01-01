@@ -7,20 +7,18 @@
     "modules-left": [
       "hyprland/workspaces",
       "custom/wallpaper",
-      "custom/keyboard-layout"
+      "custom/keyboard-layout",
     ],
     "modules-center": [
+      "clock",
+    ],
+    "modules-right": [
       "custom/cpuinfo",
       "cpu",
       "memory",
-      "custom/launcher",
-      "clock#time",
-      "clock#date",
-      "network"
-    ],
-    "modules-right": [
       "backlight",
       "pulseaudio",
+      "network",
       "battery",
       "custom/power"
     ],
@@ -89,30 +87,28 @@
       "format": "",
       "tooltip": false
     },
-    "clock#time": {
-      "format": "󱑂 {:%I:%M}",
-      "tooltip": false,
-      "min-length": 7,
-      "max-length": 7
-    },
-    "clock#date": {
-      "format": "󱨴 {:%d-%m}",
+    "clock": {
+      "format": "󱨴 {:%a %d %b  %I:%M %p}",
       "tooltip-format": "<tt>{calendar}</tt>",
       "calendar": {
         "mode": "month",
         "mode-mon-col": 3,
         "on-click-right": "mode",
         "format": {
-          "months": "<span color='#f5e0dc'><b>{}</b></span>",
-          "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+          "months": "<span color='#b4befe'><b>{}</b></span>",
+          "days": "<span color='#74c7ec'><b>{}</b></span>",
+          "weeks": "<span color='#89dceb'><b>W{}</b></span>",
+          "weekdays": "<span color='#a6e3a1'><b>{}</b></span>",
           "today": "<span color='#f38ba8'><b>{}</b></span>"
         }
       },
       "actions": {
-        "on-click-right": "mode"
+        "on-click-right": "mode",
+        "on-click-forward": "tz_up",
+        "on-click-backward": "tz_down",
+        "on-scroll-up": "shift_up",
+        "on-scroll-down": "shift_down"
       },
-      "min-length": 7,
-      "max-length": 7
     },
     "network": {
       "format-wifi": "  {signalStrength}%",
@@ -122,8 +118,8 @@
       "tooltip": true,
       "tooltip-format": "{}",
       "on-click": "~/.config/waybar/scripts/wifimenu.sh",
-      "min-length": 8,
-      "max-length": 8
+      "min-length": 7,
+      "max-length": 7
     },
     "backlight": {
       "format": "{icon} {percent}%",
@@ -200,20 +196,17 @@
     "modules-left": [
       "hyprland/workspaces",
       "custom/wallpaper",
-      "custom/keyboard-layout"
+      "custom/keyboard-layout",
     ],
     "modules-center": [
+      "clock",
+    ],
+    "modules-right": [
       "custom/cpuinfo",
       "cpu",
       "memory",
-      "custom/launcher",
-      "clock#time",
-      "clock#date",
-      "network"
-    ],
-    "modules-right": [
-      "custom/media",
       "pulseaudio",
+      "network",
       "battery",
       "custom/power"
     ],
@@ -269,27 +262,21 @@
     "cpu": {
       "interval": 15,
       "format": " {}%",
-      "min-length": 7,
-      "max-length": 7
+      "min-length": 8,
+      "max-length": 8
     },
     "memory": {
       "interval": 30,
       "format": " {}%",
-      "min-length": 7,
-      "max-length": 7
+      "min-length": 8,
+      "max-length": 8
     },
     "custom/launcher": {
       "format": "",
       "tooltip": false
     },
-    "clock#time": {
-      "format": "󱑂 {:%I:%M}",
-      "tooltip": false,
-      "min-length": 7,
-      "max-length": 7
-    },
-    "clock#date": {
-      "format": "󱨴 {:%d-%m}",
+    "clock": {
+      "format": "󱨴 {:%a %d %b %Y  %I:%M %p}",
       "tooltip-format": "<tt>{calendar}</tt>",
       "calendar": {
         "mode": "month",
@@ -297,15 +284,19 @@
         "on-click-right": "mode",
         "format": {
           "months": "<span color='#f5e0dc'><b>{}</b></span>",
+          "days": "<span color='#ecc6d9'><b>{}</b></span>",
+          "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
           "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
           "today": "<span color='#f38ba8'><b>{}</b></span>"
         }
       },
       "actions": {
-        "on-click-right": "mode"
+        "on-click-right": "mode",
+        "on-click-forward": "tz_up",
+        "on-click-backward": "tz_down",
+        "on-scroll-up": "shift_up",
+        "on-scroll-down": "shift_down"
       },
-      "min-length": 7,
-      "max-length": 7
     },
     "network": {
       "format-wifi": "  {signalStrength}%",
@@ -342,8 +333,8 @@
       "tooltip": false,
       "on-scroll-up": "~/.config/waybar/scripts/brightnesscontrol.sh -o i",
       "on-scroll-down": "~/.config/waybar/scripts/brightnesscontrol.sh -o d",
-      "min-length": 7,
-      "max-length": 7
+      "min-length": 8,
+      "max-length": 8
     },
     "pulseaudio": {
       "tooltip": false,
@@ -359,8 +350,8 @@
           ""
         ]
       },
-      "min-length": 7,
-      "max-length": 7
+      "min-length": 8,
+      "max-length": 8
     },
     "battery": {
       "states": {
@@ -382,8 +373,8 @@
       "bat": "BAT0",
       "adapter": "ADP0",
       "interval": 60,
-      "min-length": 7,
-      "max-length": 7
+      "min-length": 8,
+      "max-length": 8
     },
     "custom/power": {
       "format": "",

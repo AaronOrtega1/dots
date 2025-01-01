@@ -8,11 +8,11 @@
 @define-color hover             #e8a2af;
 
 * {
-  border: none;
+  color: @foreground;
+  border: 0;
   border-radius: 10px;
   font-family: "JetBrainsMono Nerd Font";
   font-size: 14px;
-  min-height: 8px;
 }
 
 window#waybar {
@@ -37,9 +37,9 @@ window#waybar.hidden {
 /* ================================================ */
 #workspaces {
   margin-top: 6px;
-  margin-left: 12px;
-  font-size: 4px;
+  margin-left: 6px;
   margin-bottom: 0px;
+  font-size: 4px;
   background: @background;
   transition: none;
 }
@@ -102,19 +102,18 @@ window#waybar.hidden {
 /* ================ CENTER MODULES ================ */
 /* ================================================ */
 
-#memory,
-#cpu,
-#custom-cpuinfo,
-#clock,
-#network {
+#clock {
   margin-top: 6px;
-  margin-left: 8px;
-  padding-left: 10px;
   margin-bottom: 0px;
+  padding-left: 10px;
   padding-right: 10px;
   transition: none;
   background: @background;
   color: @foreground;
+}
+
+#custom-cpuinfo {
+  margin-left: 8px;
 }
 
 #custom-launcher {
@@ -136,17 +135,32 @@ window#waybar.hidden {
 /* ================================================ */
 /* ================= RIGHT MODULES ================ */
 /* ================================================ */
+
 #custom-media,
-#pulseaudio,
-#battery,
 #backlight,
-#custom-pomodoro,
+#pulseaudio,
+#network,
+#battery,
+#memory,
+#cpu,
+#custom-cpuinfo,
+#network,
 #tray {
   margin-top: 6px;
   margin-left: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 5px 8px;
   margin-bottom: 0px;
+  transition: none;
+  background: @background;
+  color: @foreground;
+}
+
+#custom-keyboard-layout {
+  margin-top: 6px;
+  margin-left: 8px;
+  padding-left: 10px;
+  margin-bottom: 0px;
+  padding-right: 10px;
   transition: none;
   background: @background;
   color: @foreground;
