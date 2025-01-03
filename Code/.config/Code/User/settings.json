@@ -155,8 +155,7 @@
       "editor.background": "#181825",
       "editorGutter.background": "#181826",
       "breadcrumb.background": "#181826",
-      "breadcrumbPicker.background": "#181826",
-      "quickInput.border": "#1E1E2E"
+      "breadcrumbPicker.background": "#181826"
     },
     "[Kanagawa]": {
       // Title Bar
@@ -360,5 +359,6 @@
   "liveServer.settings.donotShowInfoMsg": true,
   "sqldeveloper.telemetry.enabled": false,
   "sqldeveloper.sqlHistory.historyLimit": 500,
-  "git.autofetch": true
+  "git.autofetch": true,
+  "editor.unicodeHighlight.invisibleCharacters": false
 }

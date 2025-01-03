@@ -344,5 +344,6 @@
     "key": "space l",
     "command": "workbench.view.extensions",
     "when": "neovim.mode == 'normal' && (editorTextFocus || !inputFocus)"
-  }
+  },
+  // follow link
 ]
