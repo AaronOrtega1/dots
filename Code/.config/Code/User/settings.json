@@ -25,7 +25,8 @@
   "editor.fontLigatures": true,
   "editor.lineNumbers": "relative",
   "editor.wordWrap": "on",
-  "editor.formatOnSave": true,
+  // TURN OFF WHEN IN "~/Documents/Code/Work"
+  // "editor.formatOnSave": true,
   "editor.autoIndent": "full",
   "editor.formatOnType": true,
   "editor.guides.indentation": true,
@@ -248,9 +249,9 @@
   // ===========================================================================
   // APC - UI customizer
   // ===========================================================================
-  "window.titleBarStyle": "custom",
+  "window.titleBarStyle": "native",
   "workbench.sideBar.location": "right",
-  // "workbench.activityBar.location": "hidden",
+  "workbench.activityBar.location": "hidden",
   "workbench.editor.editorActionsLocation": "hidden",
   "workbench.layoutControl.enabled": false,
   "workbench.editor.showTabs": "multiple",

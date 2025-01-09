@@ -1,0 +1,35 @@
+# Catppuccin Mocha theme for htop
+# Save this to ~/.config/htop/htoprc
+
+# Main UI colors
+color_scheme=0
+header_margin=1
+detailed_cpu_time=0
+cpu_count_from_one=0
+show_cpu_usage=1
+show_cpu_frequency=1
+
+# Color settings (Catppuccin Mocha)
+color0=205,214,244 # Default text - Text
+color1=243,139,168 # Red - Mauve
+color2=166,227,161 # Green - Green
+color3=249,226,175 # Yellow - Yellow
+color4=137,180,250 # Blue - Blue
+color5=203,166,247 # Magenta - Lavender
+color6=148,226,213 # Cyan - Teal
+color7=180,190,254 # White - Subtext0
+color8=116,199,236 # Bright Blue - Sky
+color9=245,194,231 # Bright Magenta - Pink
+color10=137,220,235 # Bright Cyan - Sapphire
+color11=49,50,68 # Background 1 - Surface0
+color12=17,17,27 # Background 2 - Base
+color13=69,71,90 # Grid color - Surface1
+color14=166,173,200 # Shadow - Overlay0
+color15=245,224,220 # Selected bg - Rosewater
+
+# Meter colors
+cpu_color=205,214,244
+mem_color=203,166,247
+swap_color=243,139,168
+net_color=166,227,161
+proc_color=249,226,175
