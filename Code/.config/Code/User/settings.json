@@ -249,9 +249,9 @@
   // ===========================================================================
   // APC - UI customizer
   // ===========================================================================
-  "window.titleBarStyle": "native",
+  "window.titleBarStyle": "custom",
   "workbench.sideBar.location": "right",
-  "workbench.activityBar.location": "hidden",
+  "workbench.activityBar.location": "default",
   "workbench.editor.editorActionsLocation": "hidden",
   "workbench.layoutControl.enabled": false,
   "workbench.editor.showTabs": "multiple",
@@ -361,5 +361,7 @@
   "sqldeveloper.telemetry.enabled": false,
   "sqldeveloper.sqlHistory.historyLimit": 500,
   "git.autofetch": true,
-  "editor.unicodeHighlight.invisibleCharacters": false
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  "python.defaultInterpreterPath": "/home/aarondev/.conda/envs/DataScienceCourse/bin/python",
+  "terminal.integrated.inheritEnv": false
 }

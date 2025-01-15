@@ -79,6 +79,7 @@ alias sonarstop='/opt/sonarqube/bin/linux-x86-64/sonar.sh stop'
 alias sonarstatus='/opt/sonarqube/bin/linux-x86-64/sonar.sh status'
 alias sonar-scanner='/opt/sonarscanner/bin/sonar-scanner'
 alias code='env GDK_BACKEND=wayland OZONE_PLATFORM=wayland code --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto 2>/dev/null'
+alias down='cd $HOME/Downloads/'
 
 # Shell integration
 eval "$(fzf --zsh)"
@@ -106,6 +107,10 @@ if command -v tmux &> /dev/null; then
     fi
 fi
 
+# Conda
+export CONDA_CHANGEPS1="false"
+
+# Set up environment variables for Wayland
 export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
 
 export GDK_SCALE=1
