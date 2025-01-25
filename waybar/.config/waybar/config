@@ -13,9 +13,6 @@
       "clock",
     ],
     "modules-right": [
-      "custom/cpuinfo",
-      "cpu",
-      "memory",
       "backlight",
       "pulseaudio",
       "network",
