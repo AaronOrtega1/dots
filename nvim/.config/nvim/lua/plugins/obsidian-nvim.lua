@@ -26,14 +26,19 @@ return {
       },
       {
         name = "test-nvim",
-        path = "~/Documents/test-nvim/",
+        path = "~/Documents/NVIM-vault/",
       },
     },
+
+    -- Either 'wiki' or 'markdown'.
+    preferred_link_style = "markdown",
+    -- Deshabilitar metadatos
+    disable_frontmatter = true,
 
     -- Completion
     completion = {
       -- Set to false to disable
-      nvim_cmp = true,
+      nvim_cmp = false,
 
       -- Trigger completion at 2 chars
       min_chars = 2,
@@ -41,7 +46,7 @@ return {
 
     -- Templates
     templates = {
-      folder = "5 - Templates",
+      folder = "5-Templates",
       date_format = "%Y-%m-%d",
       time_format = "%H:%M",
       -- A map for custom variables, the key should be the variable and the value a function
@@ -50,11 +55,11 @@ return {
 
     daily_notes = {
       -- Daily notes directory
-      folder = "6 - Daily Notes",
+      folder = "6-Daily Notes",
       -- File name format
       date_format = "%Y-%m-%d",
       -- Template
-      template = "5 - Templates/Daily Note Template",
+      template = "5-Templates/Daily Note Template",
     },
 
     note_id_func = function(title)
@@ -73,6 +78,16 @@ return {
       end
       return tostring(os.time()) .. "-" .. suffix
     end,
+
+    -- Optional, alternatively you can customize the frontmatter data.
+    ---@return table
+    note_frontmatter_func = function(note)
+      if note.metadata then
+        return note.metadata
+      end
+      return {}
+    end,
+
     mappings = {
       -- Obsidian Follow
       ["<leader>gf"] = {
@@ -103,7 +118,7 @@ return {
     -- Specify how to handle attachments.
     attachments = {
       -- Folder where attachments are stored.
-      img_folder = "3 - Resources/Assets",
+      img_folder = "3-Resources/Assets",
     },
   },
 }

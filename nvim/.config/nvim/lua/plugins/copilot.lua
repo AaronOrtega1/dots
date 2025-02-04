@@ -1,9 +1,17 @@
 return {
   "github/copilot.vim",
   config = function()
-    -- Configuración opcional para Copilot
     vim.g.copilot_no_tab_map = true
+
+    -- Desactivar Copilot para archivos markdown
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = "markdown",
+      callback = function()
+        vim.b.copilot_enabled = false
+      end,
+    })
+
+    -- Mapeo para aceptar sugerencias
     vim.api.nvim_set_keymap("i", "<A-l>", "copilot#Accept()", { expr = true, silent = true })
-    -- vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
   end,
 }

@@ -4,7 +4,8 @@
 DIRECTORIO="$HOME/Pictures/Screenshots/"
 
 # Nombre de archivo con la fecha y hora actual
-NOMBRE_ARCHIVO="screenshots_$(date +%Y-%m-%d_%H-%M-%S).png"
+# NOMBRE_ARCHIVO="screenshots_$(date +%Y-%m-%d_%H-%M-%S).png"
+NOMBRE_ARCHIVO="screenshots_$(date +%Y-%m-%d_%H-%M-%S).avif"
 
 # Ruta completa de la captura
 RUTA_COMPLETA="$DIRECTORIO/$NOMBRE_ARCHIVO"

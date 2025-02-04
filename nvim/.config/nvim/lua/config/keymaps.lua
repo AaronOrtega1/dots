@@ -42,9 +42,9 @@ keymap.set("n", "<C-S-k>", "<C-w>+")
 keymap.set("n", "<C-S-j>", "<C-w>-")
 
 -- Diagnostics
-keymap.set("n", "<C-j>", function()
-  vim.diagnostic.goto_next()
-end, opts)
+-- keymap.set("n", "<C-j>", function()
+--   vim.diagnostic.goto_next()
+-- end, opts)
 
 -- Cambiar búsqueda de archivos
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "Buscar archivo en CWD" })
@@ -65,7 +65,11 @@ vim.keymap.set(
 )
 
 -- toggle folds
-vim.api.nvim_set_keymap("n", "za", "za", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "za", "za", opts)
 
 -- dismiss noice
-vim.api.nvim_set_keymap("n", "<leader>nd", "<cmd>Noice dismiss<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>nd", "<cmd>Noice dismiss<cr>", opts)
+
+-- Obsidian
+vim.api.nvim_set_keymap("n", "<leader>nn", "<cmd>ObsidianNew<cr>", opts)
+vim.api.nvim_set_keymap("n", "<leader>nt", "<cmd>ObsidianTemplate<cr>", opts)
