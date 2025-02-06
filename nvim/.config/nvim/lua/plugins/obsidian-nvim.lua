@@ -55,7 +55,7 @@ return {
 
     daily_notes = {
       -- Daily notes directory
-      folder = "6-Daily Notes",
+      folder = "6-Journal",
       -- File name format
       date_format = "%Y-%m-%d",
       -- Template
@@ -68,8 +68,11 @@ return {
       -- like '1657296016-my-new-note', and therefore the file name '1657296016-my-new-note.md'
       local suffix = ""
       if title ~= nil then
+        -- If title has " ", replace it with "-"
+        title = string.gsub(title, " ", "-")
         -- If title is given, transform it into valid file name.
-        return title
+        return tostring(os.time()) .. "-" .. title
+        -- return title
       else
         -- If title is nil, just add 4 random uppercase letters to the suffix.
         for _ = 1, 4 do

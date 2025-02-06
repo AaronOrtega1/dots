@@ -51,7 +51,7 @@ return {
         { name = "luasnip" }, -- snippets
         { name = "buffer" }, -- text within current buffer
         { name = "path" }, -- file system paths
-        -- { name = "copilot" }, -- copilot vim
+        { name = "copilot" }, -- copilot vim
       }),
 
       -- configure lspkind for vs-code like pictograms in completion menu
