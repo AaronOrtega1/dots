@@ -71,5 +71,6 @@ vim.api.nvim_set_keymap("n", "za", "za", opts)
 vim.api.nvim_set_keymap("n", "<leader>nd", "<cmd>Noice dismiss<cr>", opts)
 
 -- Obsidian
-vim.api.nvim_set_keymap("n", "<leader>nn", "<cmd>ObsidianNew<cr>", opts)
-vim.api.nvim_set_keymap("n", "<leader>nt", "<cmd>ObsidianTemplate<cr>", opts)
+vim.api.nvim_set_keymap("n", "<leader>on", "<cmd>ObsidianNew<cr>", opts)
+vim.api.nvim_set_keymap("n", "<leader>ot", "<cmd>ObsidianTemplate<cr>", opts)
+vim.api.nvim_set_keymap("n", "<leader>od", "<cmd>ObsidianDailies<cr>", opts)

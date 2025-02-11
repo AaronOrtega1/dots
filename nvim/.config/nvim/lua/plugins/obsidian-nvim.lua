@@ -31,7 +31,7 @@ return {
     },
 
     -- Either 'wiki' or 'markdown'.
-    preferred_link_style = "markdown",
+    preferred_link_style = "wiki",
     -- Deshabilitar metadatos
     disable_frontmatter = true,
 
