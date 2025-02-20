@@ -6,8 +6,7 @@
     "output": "!DP-1",
     "modules-left": [
       "hyprland/workspaces",
-      "custom/wallpaper",
-      "custom/keyboard-layout",
+      "custom/keyboard-layout"
     ],
     "modules-center": [
       "clock",

@@ -121,7 +121,7 @@
       "tab.border": "#1E1E2E",
       // Editor Group
       "editorGroupHeader.tabsBorder": "#181825",
-      "editorGroupHeader.tabsBackground": "#1E1E2E",
+      "editorGroupHeader.tabsBackground": "#181825",
       "editorGroup.border": "#1E1E2E",
       "foreground": "#CDD6F4",
       "editorCursor.foreground": "#CDD6F490",
@@ -363,5 +363,6 @@
   "git.autofetch": true,
   "editor.unicodeHighlight.invisibleCharacters": false,
   "python.defaultInterpreterPath": "/home/aarondev/.conda/envs/DataScienceCourse/bin/python",
-  "terminal.integrated.inheritEnv": false
+  "terminal.integrated.inheritEnv": false,
+  "redhat.telemetry.enabled": false
 }
