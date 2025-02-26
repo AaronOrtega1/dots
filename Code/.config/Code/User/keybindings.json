@@ -57,7 +57,8 @@
   {
     "key": "escape",
     "command": "workbench.action.toggleSidebarVisibility",
-    "when": "sideBarFocus"
+    //filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
   // Navigate between tabs
   {
