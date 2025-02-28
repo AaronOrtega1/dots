@@ -104,24 +104,24 @@
     },
     "[Catppuccin Mocha]": {
       // Title Bar
-      "titleBar.activeBackground": "#181825",
-      "titleBar.inactiveBackground": "#181825",
+      "titleBar.activeBackground": "#1E1E2E",
+      "titleBar.inactiveBackground": "#1E1E2E",
       "titleBar.border": "#1E1E2E",
       "titleBar.activeForeground": "#CDD6F4",
       // Activity Bar
-      "activityBar.background": "#181825",
+      "activityBar.background": "#1E1E2E",
       "activityBar.border": "#1E1E2E",
       "activityBar.foreground": "#CDD6F4",
       "activityBarBadge.background": "#89B4FA",
       "activityBarBadge.foreground": "#1E1E2E",
       // Tabs
       "tab.activeBorderTop": "#B4BEFE",
-      "tab.activeBackground": "#181825",
-      "tab.inactiveBackground": "#181825",
+      "tab.activeBackground": "#1E1E2E",
+      "tab.inactiveBackground": "#1E1E2E",
       "tab.border": "#1E1E2E",
       // Editor Group
-      "editorGroupHeader.tabsBorder": "#181825",
-      "editorGroupHeader.tabsBackground": "#181825",
+      "editorGroupHeader.tabsBorder": "#1E1E2E",
+      "editorGroupHeader.tabsBackground": "#1E1E2E",
       "editorGroup.border": "#1E1E2E",
       "foreground": "#CDD6F4",
       "editorCursor.foreground": "#CDD6F490",
@@ -136,15 +136,15 @@
       "sideBar.foreground": "#CDD6F4",
       // Status bar
       "statusBarItem.remoteBackground": "#CBA6F7",
-      "statusBarItem.remoteForeground": "#181825",
-      "statusBar.debuggingBackground": "#181825",
-      "statusBar.background": "#181825",
+      "statusBarItem.remoteForeground": "#1E1E2E",
+      "statusBar.debuggingBackground": "#1E1E2E",
+      "statusBar.background": "#1E1E2E",
       "statusBar.border": "#1E1E2E",
       "statusBar.foreground": "#CDD6F4",
       // Panel
-      "panel.background": "#181825",
+      "panel.background": "#1E1E2E",
       // Suggestion box
-      "editorSuggestWidget.background": "#181825",
+      "editorSuggestWidget.background": "#1E1E2E",
       "editorSuggestWidget.border": "#CBA6F7",
       "editorSuggestWidget.foreground": "#CDD6F4",
       "editorSuggestWidget.selectedBackground": "#585B7050",
@@ -153,10 +153,10 @@
       "list.highlightForeground": "#CBA6F7",
       "list.focusForeground": "#B4BEFE",
       // extras
-      "editor.background": "#181825",
-      "editorGutter.background": "#181826",
-      "breadcrumb.background": "#181826",
-      "breadcrumbPicker.background": "#181826"
+      "editor.background": "#1E1E2E",
+      "editorGutter.background": "#1E1E2E",
+      "breadcrumb.background": "#1E1E2E",
+      "breadcrumbPicker.background": "#1E1E2E"
     },
     "[Kanagawa]": {
       // Title Bar
