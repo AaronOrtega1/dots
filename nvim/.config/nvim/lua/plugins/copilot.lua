@@ -11,6 +11,18 @@ return {
       end,
     })
 
+    -- Desactivar Copilot si estás en un path específico
+    vim.api.nvim_create_autocmd("VimEnter", {
+      callback = function()
+        local path = vim.fn.getcwd() -- Obtiene el path actual
+        if path:match("$HOME/Documents/Code/PersonalProjects/*") then
+          vim.g.copilot_enabled = false
+        else
+          vim.g.copilot_enabled = true
+        end
+      end,
+    })
+
     -- Mapeo para aceptar sugerencias
     vim.api.nvim_set_keymap("i", "<A-l>", "copilot#Accept()", { expr = true, silent = true })
   end,

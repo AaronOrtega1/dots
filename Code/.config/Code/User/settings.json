@@ -106,11 +106,11 @@
       // Title Bar
       "titleBar.activeBackground": "#1E1E2E",
       "titleBar.inactiveBackground": "#1E1E2E",
-      "titleBar.border": "#1E1E2E",
+      "titleBar.border": "#585B7050",
       "titleBar.activeForeground": "#CDD6F4",
       // Activity Bar
       "activityBar.background": "#1E1E2E",
-      "activityBar.border": "#1E1E2E",
+      "activityBar.border": "#585B7050",
       "activityBar.foreground": "#CDD6F4",
       "activityBarBadge.background": "#89B4FA",
       "activityBarBadge.foreground": "#1E1E2E",
@@ -118,11 +118,11 @@
       "tab.activeBorderTop": "#B4BEFE",
       "tab.activeBackground": "#1E1E2E",
       "tab.inactiveBackground": "#1E1E2E",
-      "tab.border": "#1E1E2E",
+      "tab.border": "#585B7050",
       // Editor Group
       "editorGroupHeader.tabsBorder": "#1E1E2E",
       "editorGroupHeader.tabsBackground": "#1E1E2E",
-      "editorGroup.border": "#1E1E2E",
+      "editorGroup.border": "#585B7050",
       "foreground": "#CDD6F4",
       "editorCursor.foreground": "#CDD6F490",
       "selection.background": "#585B70",
@@ -132,14 +132,15 @@
       "editor.selectionBackground": "#585B7050",
       "editor.lineHighlightBackground": "#1E1E2E",
       // Side bar
-      "sideBar.border": "#1E1E2E",
+      "sideBar.border": "#585B7050",
       "sideBar.foreground": "#CDD6F4",
+      "sideBar.background": "#1E1E2E",
       // Status bar
       "statusBarItem.remoteBackground": "#CBA6F7",
       "statusBarItem.remoteForeground": "#1E1E2E",
       "statusBar.debuggingBackground": "#1E1E2E",
       "statusBar.background": "#1E1E2E",
-      "statusBar.border": "#1E1E2E",
+      "statusBar.border": "#585B7050",
       "statusBar.foreground": "#CDD6F4",
       // Panel
       "panel.background": "#1E1E2E",
@@ -157,6 +158,7 @@
       "editorGutter.background": "#1E1E2E",
       "breadcrumb.background": "#1E1E2E",
       "breadcrumbPicker.background": "#1E1E2E"
+      //
     },
     "[Kanagawa]": {
       // Title Bar
