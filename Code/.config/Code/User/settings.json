@@ -360,11 +360,10 @@
   "symbols.hidesExplorerArrows": true,
   "editor.minimap.enabled": false,
   "liveServer.settings.donotShowInfoMsg": true,
-  "sqldeveloper.telemetry.enabled": false,
-  "sqldeveloper.sqlHistory.historyLimit": 500,
   "git.autofetch": true,
   "editor.unicodeHighlight.invisibleCharacters": false,
   "python.defaultInterpreterPath": "/home/aarondev/.conda/envs/DataScienceCourse/bin/python",
   "terminal.integrated.inheritEnv": false,
-  "redhat.telemetry.enabled": false
+  "redhat.telemetry.enabled": false,
+  "sqltools.results.showConsoleOnError": false
 }
