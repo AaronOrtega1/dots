@@ -80,6 +80,7 @@ alias sonarstatus='/opt/sonarqube/bin/linux-x86-64/sonar.sh status'
 alias sonar-scanner='/opt/sonarscanner/bin/sonar-scanner'
 alias code='env GDK_BACKEND=wayland OZONE_PLATFORM=wayland code --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto 2>/dev/null'
 alias down='cd $HOME/Downloads/'
+alias fastfetch='pokeget gengar --hide-name | fastfetch --logo-padding-top 4 --file-raw -'
 
 # Shell integration
 eval "$(fzf --zsh)"
