@@ -1,0 +1,20 @@
+{
+    "label" : "integrated",
+    "action" : "swaylock",
+    "text" : "Pantalla Integrada",
+    "keybind" : "i"
+}
+
+{
+    "label" : "external",
+    "action" : "hyprctl dispatch exit 0",
+    "text" : "Pantalla Externa",
+    "keybind" : "d"
+}
+
+{
+    "label" : "expand",
+    "action" : "swaylock -f && systemctl suspend",
+    "text" : "Expandir",
+    "keybind" : "e"
+}
