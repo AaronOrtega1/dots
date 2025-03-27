@@ -114,8 +114,10 @@
       "activityBar.foreground": "#CDD6F4",
       "activityBarBadge.background": "#89B4FA",
       "activityBarBadge.foreground": "#1E1E2E",
+      "sideBarSectionHeader.background": "#1E1E2E",
       // Tabs
-      "tab.activeBorderTop": "#B4BEFE",
+      "tab.activeBorderTop": "#1E1E2E",
+      "tab.activeBorder": "#B4BEFE",
       "tab.activeBackground": "#1E1E2E",
       "tab.inactiveBackground": "#1E1E2E",
       "tab.border": "#585B7050",

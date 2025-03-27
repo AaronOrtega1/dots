@@ -1,0 +1,50 @@
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+
+(defvar
+  tap-time 200
+  hold-time 200
+)
+
+(defalias
+  escctrl (tap-hold $tap-time $hold-time esc lctl)
+  sym (tap-hold $tap-time $hold-time tab (layer-toggle symbols))
+  a-mod (tap-hold $tap-time $hold-time a lalt)
+  s-mod (tap-hold $tap-time $hold-time s lmeta)
+  d-mod (tap-hold $tap-time $hold-time d lsft)
+  f-mod (tap-hold $tap-time $hold-time f lctl)
+  h-mod (tap-hold $tap-time $hold-time h rctl)
+  j-mod (tap-hold $tap-time $hold-time j rsft)
+  k-mod (tap-hold $tap-time $hold-time k rmeta)
+  l-mod (tap-hold $tap-time $hold-time l ralt)
+)
+
+(deflayer default
+  caps  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  @sym q    w    e    r    t    y    u    i    o    p    [    ]    \
+  @escctrl @a-mod    @s-mod    @d-mod    @f-mod    g    @h-mod    @j-mod    @k-mod    @l-mod    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lalt lmet           spc            ralt rmet rctl
+)
+
+(deflayer symbols
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    S-1  S-2  S-3  S-4  S-5  S-6  S-7  S-8  S-9  S-0  _    _    _
+  _    S-5  S-6  S-7  S-8  _    _    _    _    S-9  S-0  _    _    _
+  _    _    _    del  _    _    left down up   rght _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _
+)
+
+

@@ -3,7 +3,7 @@
     "layer": "top",
     "margin-top": 2,
     "margin-bottom": 2,
-    "output": "!DP-1",
+    "output": "eDP-1",
     "modules-left": [
       "hyprland/workspaces",
       "custom/wallpaper",
@@ -190,7 +190,7 @@
     "layer": "top",
     "margin-top": 2,
     "margin-bottom": 2,
-    "output": "DP-1",
+    "output": "!eDP-1",
     "modules-left": [
       "hyprland/workspaces",
       "custom/wallpaper",
