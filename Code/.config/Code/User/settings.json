@@ -117,7 +117,7 @@
       "sideBarSectionHeader.background": "#1E1E2E",
       // Tabs
       "tab.activeBorderTop": "#1E1E2E",
-      "tab.activeBorder": "#B4BEFE",
+      "tab.activeBorder": "#cd1313",
       "tab.activeBackground": "#1E1E2E",
       "tab.inactiveBackground": "#1E1E2E",
       "tab.border": "#585B7050",
