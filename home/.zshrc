@@ -108,9 +108,6 @@ if command -v tmux &> /dev/null; then
     fi
 fi
 
-# Conda
-export CONDA_CHANGEPS1="false"
-
 # Set up environment variables for Wayland
 export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
 
@@ -120,3 +117,7 @@ export GDK_BACKEND=wayland
 export QT_QPA_PLATFORM=wayland
 export MOZ_ENABLE_WAYLAND=1
 export OZONE_PLATFORM=wayland
+
+# Conda
+export CONDA_CHANGEPS1="false"
+# source /opt/miniconda3/bin/activate

@@ -31,7 +31,7 @@
   "editor.formatOnType": true,
   "editor.guides.indentation": true,
   "editor.guides.bracketPairs": true,
-  "editor.tabSize": 2,
+  "editor.tabSize": 4,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.matchBrackets": "never",
   "editor.multiCursorMergeOverlapping": false,
@@ -117,7 +117,7 @@
       "sideBarSectionHeader.background": "#1E1E2E",
       // Tabs
       "tab.activeBorderTop": "#1E1E2E",
-      "tab.activeBorder": "#cd1313",
+      "tab.activeBorder": "#CBA6F7",
       "tab.activeBackground": "#1E1E2E",
       "tab.inactiveBackground": "#1E1E2E",
       "tab.border": "#585B7050",
@@ -367,5 +367,8 @@
   "python.defaultInterpreterPath": "/home/aarondev/.conda/envs/DataScienceCourse/bin/python",
   "terminal.integrated.inheritEnv": false,
   "redhat.telemetry.enabled": false,
-  "sqltools.results.showConsoleOnError": false
+  "sqltools.results.showConsoleOnError": false,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  }
 }
