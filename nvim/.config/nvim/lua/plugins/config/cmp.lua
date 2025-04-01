@@ -8,7 +8,7 @@ cmp.setup({
       require("luasnip").lsp_expand(args.body)
     end,
   },
-  apping = cmp.mapping.preset.insert({
+  mapping = cmp.mapping.preset.insert({
     ["<Tab>"] = cmp.mapping(function(fallback)
       if require("luasnip").expand_or_jumpable() then
         require("luasnip").expand_or_jump()
@@ -91,17 +91,6 @@ cmp.setup({
   experimental = {
     ghost_text = true,
   },
-})
--- Configuración específica para LuaSnip
-require("luasnip").config.setup({
-  history = true,
-  updateevents = "TextChanged,TextChangedI",
-  enable_autosnippets = true,
-})
-
--- Carga friendly-snippets con tus snippets personalizados
-require("luasnip.loaders.from_vscode").lazy_load({
-  paths = { "./lua/snippets" }, -- Asegúrate que esta ruta apunte a tu directorio de snippets
 })
 
 -- Configuración específica para archivos tex

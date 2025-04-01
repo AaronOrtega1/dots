@@ -1,126 +1,52 @@
 return {
   "L3MON4D3/LuaSnip",
   enabled = true,
-  opts = function(_, opts)
+  dependencies = {
+    "rafamadriz/friendly-snippets", -- Opcional: snippets predefinidos
+  },
+  config = function()
     local ls = require("luasnip")
 
+    -- Configuración de auto_semicolon
     local extend_decorator = require("luasnip.util.extend_decorator")
-    -- Create trigger transformation function
     local function auto_semicolon(context)
       if type(context) == "string" then
         return { trig = ";" .. context }
       end
       return vim.tbl_extend("keep", { trig = ";" .. context.trig }, context)
     end
-    -- Register and apply decorator properly
+
     extend_decorator.register(ls.s, {
       arg_indx = 1,
       extend = function(original)
         return auto_semicolon(original)
       end,
     })
-    local s = extend_decorator.apply(ls.s, {})
 
-    local t = ls.text_node
-    local i = ls.insert_node
-    local f = ls.function_node
-    local fmta = require("luasnip.extras.fmt").fmta
-    local fmt = require("luasnip.extras.fmt").fmt
-    local rep = require("luasnip.extras").rep
-
-    local function clipboard()
-      return vim.fn.getreg("+")
-    end
-
-    -- Define languages for code blocks
-    local languages = {
-      "python",
-      "html",
-      "css",
-      "javascript",
-      "typescript",
-      "javascriptreact",
-      "typescriptreact",
-      "markdown",
-      "txt",
-      "json",
-      "yaml",
+    -- Cargar snippets específicos por tipo de archivo
+    local ft_to_snippets = {
+      python = require("snippets.python"),
+      javascript = require("snippets.javascript"),
+      javascriptreact = require("snippets.javascript"), -- Para archivos React (.jsx)
+      typescript = require("snippets.javascript"), -- También para TypeScript
+      typescriptreact = require("snippets.javascript"), -- Para archivos React con TypeScript (.tsx)
     }
 
-    -- Generate snippets for all languages
-    local snippets = {}
+    -- Cargar snippets personalizados
+    for ft, snippets_data in pairs(ft_to_snippets) do
+      ls.add_snippets(ft, snippets_data.snippets)
+      if snippets_data.autosnippets and not vim.tbl_isempty(snippets_data.autosnippets) then
+        ls.add_snippets(ft, snippets_data.autosnippets, { type = "autosnippets" })
+      end
+    end
 
-    -- Python source file header
-    table.insert(
-      snippets,
-      s(
-        {
-          trig = "head",
-          dscr = "Python source file header",
-          wordTrig = true,
-        },
-        fmta(
-          [[
-          """
-          Description: <>
-          Author: <>
-          Created: <>
-          """
-          <>
-          ]],
-          {
-            i(1),
-            i(2, "Francisco Aarón Ortega Anguiano <aaron.ortega15@outlook.es>"),
-            f(function()
-              return os.date("%Y-%m-%d %H:%M:%S%z")
-            end),
-            i(0),
-          }
-        )
-      )
-    )
-
-    -- Python print statement
-    table.insert(
-      snippets,
-      s({
-        trig = "print",
-        dscr = "Print value of some variable",
-      }, fmta('print("<>".format(<>))', { i(1), i(2) }))
-    )
-
-    -- Python import as
-    table.insert(
-      snippets,
-      s({
-        trig = "impa",
-        dscr = "import FOO as BAR",
-        wordTrig = true,
-      }, fmta("import <> as <>", { i(1, "FOO"), i(2, "BAR") }))
-    )
-
-    -- Python main function
-    table.insert(
-      snippets,
-      s(
-        {
-          trig = "main",
-          dscr = "Main function boilerplate",
-          wordTrig = true,
-        },
-        fmta(
-          [[
-          def main():
-              <>
-
-          if __name__ == "__main__":
-              main()
-          ]],
-          { i(0) }
-        )
-      )
-    )
-
-    return opts
+    -- Cargar friendly-snippets (opcional)
+    require("luasnip.loaders.from_vscode").lazy_load()
   end,
+  opts = {
+    history = true,
+    updateevents = "TextChanged,TextChangedI",
+    delete_check_events = "TextChanged",
+    enable_autosnippets = true,
+  },
 }
