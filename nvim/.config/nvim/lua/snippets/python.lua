@@ -9,6 +9,29 @@ local date = function()
   return os.date("%Y-%m-%d %H:%M:%S%z")
 end
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "python" },
+  callback = function()
+    vim.keymap.set("n", "<leader>cl", function()
+      local var = vim.fn.expand("<cword>")
+      if var ~= "" then
+        -- Obtener posición actual
+        local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+        local line = vim.api.nvim_get_current_line()
+
+        -- Insertar nueva línea debajo
+        vim.api.nvim_buf_set_lines(0, row, row, false, { "" })
+
+        -- Mover cursor a la nueva línea
+        vim.api.nvim_win_set_cursor(0, { row + 1, 0 })
+
+        -- Expandir el snippet
+        ls.snip_expand(ls.parser.parse_snippet("", 'print("' .. var .. ': ", ' .. var .. ")"))
+      end
+    end, { buffer = true, desc = "Insert console.log below" })
+  end,
+})
+
 local snippets = {
   s(
     {
