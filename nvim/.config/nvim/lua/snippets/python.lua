@@ -15,24 +15,26 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.keymap.set("n", "<leader>cl", function()
       local var = vim.fn.expand("<cword>")
       if var ~= "" then
-        -- Obtener posición actual
-        local row, col = unpack(vim.api.nvim_win_get_cursor(0))
-        local line = vim.api.nvim_get_current_line()
+        -- Obtener posición actual e indentación
+        local row, _ = unpack(vim.api.nvim_win_get_cursor(0))
+        local current_line = vim.api.nvim_get_current_line()
+        local indent = current_line:match("^%s*") or ""
 
-        -- Insertar nueva línea debajo
-        vim.api.nvim_buf_set_lines(0, row, row, false, { "" })
+        -- Crear línea con print() manteniendo la indentación
+        local debug_line = indent .. 'print(f"[L#{' .. row .. "}] " .. var .. ": { " .. var .. ' }")'
 
-        -- Mover cursor a la nueva línea
-        vim.api.nvim_win_set_cursor(0, { row + 1, 0 })
+        -- Insertar nueva línea debajo con la indentación correcta
+        vim.api.nvim_buf_set_lines(0, row, row, false, { debug_line })
 
-        -- Expandir el snippet
-        ls.snip_expand(ls.parser.parse_snippet("", 'print("' .. var .. ': ", ' .. var .. ")"))
+        -- Mover cursor a la línea original (opcional)
+        vim.api.nvim_win_set_cursor(0, { row, 0 })
       end
-    end, { buffer = true, desc = "Insert console.log below" })
+    end, { buffer = true, desc = "Insert debug print below" })
   end,
 })
 
 local snippets = {
+  -- Snippet 'header'
   s(
     {
       trig = "head",
@@ -57,17 +59,48 @@ local snippets = {
     )
   ),
 
+  -- Snippet 'docstring'
+  s(
+    {
+      trig = "docs",
+      dscr = "Python docstring",
+      wordTrig = true,
+    },
+    fmta(
+      [[
+    """<>
+    
+    Args:
+        <>
+
+    Returns:
+        <>
+    """
+    <>
+    ]],
+      {
+        i(1, "Brief description"),
+        i(2, "param: Description"),
+        i(3, "Description of return value"),
+        i(0),
+      }
+    )
+  ),
+
+  -- Snippet 'print'
   s({
     trig = "print",
     dscr = "Print value of some variable",
-  }, fmta('print("<>".format(<>))', { i(1), i(2) })),
+  }, fmta('print(f"the value of <> is {<>}")', { i(1), i(2) })),
 
+  -- Snippet 'import alias'
   s({
     trig = "impa",
     dscr = "import FOO as BAR",
     wordTrig = true,
   }, fmta("import <> as <>", { i(1, "FOO"), i(2, "BAR") })),
 
+  -- Snippet 'main function'
   s(
     {
       trig = "main",

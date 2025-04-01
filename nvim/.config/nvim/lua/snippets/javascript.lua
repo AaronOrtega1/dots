@@ -17,20 +17,21 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.keymap.set("n", "<leader>cl", function()
       local var = vim.fn.expand("<cword>")
       if var ~= "" then
-        -- Obtener posición actual
-        local row, col = unpack(vim.api.nvim_win_get_cursor(0))
-        local line = vim.api.nvim_get_current_line()
+        -- Get current position and indentation
+        local row, _ = unpack(vim.api.nvim_win_get_cursor(0))
+        local current_line = vim.api.nvim_get_current_line()
+        local indent = current_line:match("^%s*") or ""
 
-        -- Insertar nueva línea debajo
-        vim.api.nvim_buf_set_lines(0, row, row, false, { "" })
+        -- Create debug line with proper indentation and line number
+        local debug_line = indent .. "console.log(`[L#${" .. row .. "}] " .. var .. ": `, " .. var .. ");"
 
-        -- Mover cursor a la nueva línea
-        vim.api.nvim_win_set_cursor(0, { row + 1, 0 })
+        -- Insert new line below with debug statement
+        vim.api.nvim_buf_set_lines(0, row, row, false, { debug_line })
 
-        -- Expandir el snippet
-        ls.snip_expand(ls.parser.parse_snippet("", 'console.log("' .. var .. ': ", ' .. var .. ");"))
+        -- Move cursor back to original position (optional)
+        vim.api.nvim_win_set_cursor(0, { row, 0 })
       end
-    end, { buffer = true, desc = "Insert console.log below" })
+    end, { buffer = true, desc = "Insert debug console.log below" })
   end,
 })
 
