@@ -9,27 +9,18 @@ local date = function()
   return os.date("%Y-%m-%d %H:%M:%S%z")
 end
 
-vim.api.nvim_create_autocmd("FileType", {
+vim.api.nvim_create_autocmd({ "FileType", "BufEnter", "BufWinEnter" }, {
   pattern = { "python" },
   callback = function()
     vim.keymap.set("n", "<leader>cl", function()
       local var = vim.fn.expand("<cword>")
       if var ~= "" then
-        -- Obtener posición actual e indentación
-        local row, _ = unpack(vim.api.nvim_win_get_cursor(0))
-        local current_line = vim.api.nvim_get_current_line()
-        local indent = current_line:match("^%s*") or ""
-
-        -- Crear línea con print() manteniendo la indentación
+        local row = vim.api.nvim_win_get_cursor(0)[1]
+        local indent = vim.api.nvim_get_current_line():match("^%s*") or ""
         local debug_line = indent .. 'print(f"[L#{' .. row .. "}] " .. var .. ": { " .. var .. ' }")'
-
-        -- Insertar nueva línea debajo con la indentación correcta
         vim.api.nvim_buf_set_lines(0, row, row, false, { debug_line })
-
-        -- Mover cursor a la línea original (opcional)
-        vim.api.nvim_win_set_cursor(0, { row, 0 })
       end
-    end, { buffer = true, desc = "Insert debug print below" })
+    end, { buffer = true, desc = "Python debug print" })
   end,
 })
 
