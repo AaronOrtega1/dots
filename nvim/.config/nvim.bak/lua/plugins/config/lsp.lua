@@ -209,17 +209,17 @@ require("mason-lspconfig").setup_handlers({
     })
   end,
 
-  -- ["jsonls"] = function()
-  --   lspconfig.jsonls.setup({
-  --     capabilities = capabilities,
-  --     settings = {
-  --       json = {
-  --         schemas = require("schemastore").json.schemas(),
-  --         validate = { enable = true },
-  --       },
-  --     },
-  --   })
-  -- end,
+  ["jsonls"] = function()
+    lspconfig.jsonls.setup({
+      capabilities = capabilities,
+      settings = {
+        json = {
+          schemas = require("schemastore").json.schemas(),
+          validate = { enable = true },
+        },
+      },
+    })
+  end,
 
   ["prismals"] = function()
     lspconfig.prismals.setup({

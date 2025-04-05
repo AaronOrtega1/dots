@@ -4,7 +4,6 @@ return {
     opts = {
       ensure_installed = {
         "lua-language-server",
-        "luacheck",
         "vim-language-server",
         "bash-language-server",
         "pyright",

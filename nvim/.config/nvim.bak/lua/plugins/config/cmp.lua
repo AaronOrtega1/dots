@@ -1,41 +1,6 @@
 local cmp = require("cmp")
 local lspkind = require("lspkind")
--- Función para obtener colores del tema
-local get_theme_colors = function()
-  local colors = vim.api.nvim_get_hl_by_name("Normal", true)
-  local comment_fg = vim.api.nvim_get_hl_by_name("Comment", true).foreground or colors.foreground
-  local string_fg = vim.api.nvim_get_hl_by_name("String", true).foreground or colors.foreground
-  local keyword_fg = vim.api.nvim_get_hl_by_name("Keyword", true).foreground or colors.foreground
-  local warning_fg = vim.api.nvim_get_hl_by_name("WarningMsg", true).foreground or colors.foreground
 
-  return {
-    abbr = colors.foreground,
-    deprecated = warning_fg,
-    match = string_fg,
-    menu = comment_fg,
-    kind = keyword_fg,
-  }
-end
-
--- Aplicar colores dinámicos
-local apply_cmp_highlights = function()
-  local colors = get_theme_colors()
-
-  vim.api.nvim_set_hl(0, "CmpItemAbbr", { fg = colors.abbr })
-  vim.api.nvim_set_hl(0, "CmpItemAbbrDeprecated", { fg = colors.deprecated, strikethrough = true })
-  vim.api.nvim_set_hl(0, "CmpItemAbbrMatch", { fg = colors.match })
-  vim.api.nvim_set_hl(0, "CmpItemAbbrMatchFuzzy", { fg = colors.match, underline = true })
-  vim.api.nvim_set_hl(0, "CmpItemMenu", { fg = colors.menu, italic = true })
-  vim.api.nvim_set_hl(0, "CmpItemKind", { fg = colors.kind })
-end
-
--- Ejecutar al cargar y al cambiar colorscheme
-vim.api.nvim_create_autocmd("ColorScheme", {
-  pattern = "*",
-  callback = apply_cmp_highlights,
-})
-
-apply_cmp_highlights() -- Aplicar al iniciar
 cmp.setup({
   snippet = {
     expand = function(args)
