@@ -130,10 +130,22 @@ return {
             return os.date("%Y-%m-%d", os.time() - 365 * 86400)
           end,
           alias = function()
-            local filename = vim.fn.expand("%:t") -- Nombre del archivo con extensión
+            local filename = vim.fn.expand("%:t")
             local without_extension = filename:gsub("%.md$", "")
             local only_title = without_extension:gsub("^%d+%-", "")
             return only_title
+          end,
+          cap_title = function()
+            local filename = vim.fn.expand("%:t")
+            local without_extension = filename:gsub("%.md$", "")
+            local only_title = without_extension:gsub("^%d+%-", "")
+            local cap = only_title
+              :gsub("(%a)([%w_']*)", function(first, rest)
+                return first:upper() .. rest:lower()
+              end)
+              :gsub("(%-)", " ")
+              :gsub("%s+", " ")
+            return cap
           end,
         },
       },
