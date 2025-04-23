@@ -1,0 +1,15 @@
+{
+  "name": "my-custom-snippets",
+  "contributes" : {
+    "snippets": [
+      {
+        "language": "python",
+        "path": "./python.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./python.json"
+      }
+    ]
+  }
+}

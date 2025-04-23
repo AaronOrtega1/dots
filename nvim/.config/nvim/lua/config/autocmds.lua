@@ -46,3 +46,35 @@ vim.api.nvim_create_autocmd("FileType", {
 --     })
 --   end,
 -- })
+
+-- Python print
+vim.api.nvim_create_autocmd({ "FileType", "BufEnter", "BufWinEnter" }, {
+  pattern = { "python" },
+  callback = function()
+    vim.keymap.set("n", "<leader>cl", function()
+      local var = vim.fn.expand("<cword>")
+      if var ~= "" then
+        local row = vim.api.nvim_win_get_cursor(0)[1]
+        local indent = vim.api.nvim_get_current_line():match("^%s*") or ""
+        local debug_line = indent .. 'print(f"[L#{' .. row .. "}] " .. var .. ": { " .. var .. ' }")'
+        vim.api.nvim_buf_set_lines(0, row, row, false, { debug_line })
+      end
+    end, { buffer = true, desc = "Python debug print" })
+  end,
+})
+
+-- javascript console.log
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
+  callback = function()
+    vim.keymap.set("n", "<leader>cl", function()
+      local var = vim.fn.expand("<cword>")
+      if var ~= "" then
+        local row = vim.api.nvim_win_get_cursor(0)[1]
+        local indent = vim.api.nvim_get_current_line():match("^%s*") or ""
+        local debug_line = indent .. "console.log(`[L#${" .. row .. "}] " .. var .. ": `, " .. var .. ");"
+        vim.api.nvim_buf_set_lines(0, row, row, false, { debug_line })
+      end
+    end, { buffer = true, desc = "Insert debug console.log below" })
+  end,
+})

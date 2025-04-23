@@ -8,3 +8,5 @@ keymap.set("n", "<C-s>", ":wa<Return>", { noremap = true, desc = "Save all files
 
 -- Toggle folding with za in normal mode
 keymap.set("n", "za", "za", opts)
+
+keymap.set("i", "jj", "<Esc>", { noremap = true, desc = "Save all files", silent = true })
