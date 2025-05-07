@@ -110,7 +110,7 @@
   },
   // Close active editor
   {
-    "key": "space q",
+    "key": "space b d",
     "command": "workbench.action.closeActiveEditor",
     "when": "neovim.mode == 'normal' && editorTextFocus"
   },
