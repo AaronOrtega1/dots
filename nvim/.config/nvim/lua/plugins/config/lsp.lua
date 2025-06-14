@@ -2,8 +2,9 @@ local api = vim.api
 local keymap = vim.keymap
 local lsp = vim.lsp
 local lspconfig = require("lspconfig")
+local mason_lspconfig = require("mason-lspconfig")
 
--- Configuración de diagnósticos (similar a LazyVim)
+-- Configuración de diagnósticos
 vim.diagnostic.config({
   virtual_text = {
     prefix = "●", -- Cambia el símbolo delante del error
@@ -50,7 +51,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 -- Configuración específica para cada LSP
-require("mason-lspconfig").setup_handlers({
+mason-lspconfig.setup_handlers({
   -- Configuración por defecto para todos los LSP
   function(server_name)
     lspconfig[server_name].setup({

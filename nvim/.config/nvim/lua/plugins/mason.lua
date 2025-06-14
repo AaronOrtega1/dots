@@ -8,7 +8,7 @@ return {
         "vim-language-server",
         "bash-language-server",
         "pyright",
-        "ruff-lsp",
+        "ruff",
         "clangd",
         "typescript-language-server",
         "eslint-lsp",
@@ -28,7 +28,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     dependencies = { "williamboman/mason.nvim" },
     opts = {
-      automatic_installation = true, -- Instala automáticamente los LSP configurados
+      automatic_installation = true,
     },
   },
 }
