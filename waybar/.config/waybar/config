@@ -17,7 +17,6 @@
       "pulseaudio",
       "network",
       "battery",
-      "custom/power"
     ],
     "hyprland/workspaces": {
       "format": "{icon}",
@@ -178,13 +177,6 @@
       "min-length": 7,
       "max-length": 7
     },
-    "custom/power": {
-      "format": "",
-      "tooltip": false,
-      "on-click": "~/.config/waybar/scripts/logoutlaunch.sh 1",
-      "on-click-right": "~/.config/waybar/scripts/logoutlaunch.sh 2",
-      "interval": 86400
-    }
   },
   {
     "layer": "top",
@@ -200,13 +192,9 @@
       "clock",
     ],
     "modules-right": [
-      "custom/cpuinfo",
-      "cpu",
-      "memory",
       "pulseaudio",
       "network",
       "battery",
-      "custom/power"
     ],
     "hyprland/workspaces": {
       "format": "{icon}",
@@ -375,12 +363,5 @@
       "min-length": 8,
       "max-length": 8
     },
-    "custom/power": {
-      "format": "",
-      "tooltip": false,
-      "on-click": "~/.config/waybar/scripts/logoutlaunch.sh 1",
-      "on-click-right": "~/.config/waybar/scripts/logoutlaunch.sh 2",
-      "interval": 86400
-    }
   }
 ]
