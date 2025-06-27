@@ -1,6 +1,6 @@
 {
   "name": "my-custom-snippets",
-  "contributes": {
+  "contributes" : {
     "snippets": [
       {
         "language": "python",
@@ -8,7 +8,7 @@
       },
       {
         "language": "javascript",
-        "path": "./javascript.json"
+        "path": "./python.json"
       }
     ]
   }

@@ -38,6 +38,15 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "python",
+--   callback = function()
+--     require("luasnip.loaders.from_lua").load({
+--       paths = { vim.fn.stdpath("config") .. "/lua/snippets" },
+--     })
+--   end,
+-- })
+
 -- Python print
 vim.api.nvim_create_autocmd({ "FileType", "BufEnter", "BufWinEnter" }, {
   pattern = { "python" },
@@ -67,41 +76,5 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.api.nvim_buf_set_lines(0, row, row, false, { debug_line })
       end
     end, { buffer = true, desc = "Insert debug console.log below" })
-  end,
-})
-
--- Markdown bold
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "markdown",
-  callback = function()
-    -- In visual mode, with words selected
-    vim.keymap.set("v", "<C-b>", 'c**<C-r>"**<Esc>', {
-      buffer = true,
-      desc = "Wrap selection with ** for bold",
-    })
-
-    -- In normal mode
-    vim.keymap.set("n", "<C-b>", 'viwc**<C-r>"**<Esc>', {
-      buffer = true,
-      desc = "Wrap word with ** for bold",
-    })
-  end,
-})
-
--- Markdown italic
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "markdown",
-  callback = function()
-    -- In visual mode, with words selected
-    vim.keymap.set("v", "<C-i>", 'c*<C-r>"*<Esc>', {
-      buffer = true,
-      desc = "Wrap selection with * for italic",
-    })
-
-    -- In normal mode
-    vim.keymap.set("n", "<C-i>", 'viwc*<C-r>"*<Esc>', {
-      buffer = true,
-      desc = "Wrap word with * for italic",
-    })
   end,
 })
