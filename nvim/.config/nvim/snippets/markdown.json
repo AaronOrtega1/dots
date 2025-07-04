@@ -1,0 +1,7 @@
+{
+  "Wiki Link": {
+    "prefix": "wlink",
+    "body": "[[${1:doc}]]",
+    "description": "JavaScript file header"
+  }
+}

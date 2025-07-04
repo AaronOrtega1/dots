@@ -9,7 +9,7 @@ keymap.set("n", "<C-s>", ":wa<Return>", { noremap = true, desc = "Save all files
 -- Toggle folding with za in normal mode
 keymap.set("n", "za", "za", opts)
 -- Esc from Insert mode with jj
-keymap.set("i", "jj", "<Esc>", { noremap = true, desc = "Save all files", silent = true })
+keymap.set("i", "jj", "<Esc>", { noremap = true, desc = "Escape insert mode", silent = true })
 
 -- Center cursor line when using <C-d>/<C-u>
 keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true, desc = "Center cursor when <C-d>", silent = true })
