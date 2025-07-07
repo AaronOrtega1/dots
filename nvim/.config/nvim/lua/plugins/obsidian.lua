@@ -107,5 +107,6 @@ return {
     -- Carga tu función personalizada desde otro archivo
     local custom_obsidian = require("custom.obsidian")
     vim.keymap.set("n", "<leader>on", custom_obsidian.custom_new_from_template, { desc = "New from template" })
+    vim.keymap.set("n", "<leader>od", ":ObsidianDailies<CR>", { desc = "New daily note" })
   end,
 }
