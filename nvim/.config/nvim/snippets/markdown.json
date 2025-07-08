@@ -2,6 +2,11 @@
   "Wiki Link": {
     "prefix": "wlink",
     "body": "[[${1:doc}]]",
-    "description": "JavaScript file header"
+    "description": "Wiki Link for Obsidian"
+  },
+  "Quiz": {
+    "prefix": "quiz",
+    "body": "- ${1:question};;${2:answer}",
+    "description": "Question for quiz template"
   }
 }
