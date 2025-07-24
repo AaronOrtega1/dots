@@ -49,7 +49,10 @@
   },
   "Solution": {
     "prefix": "sol",
-    "body": "solution = Solution()",
+    "body": [
+      "solution = Solution()",
+      "print(solution.)"
+    ],
     "description": "solution"
   }
 }

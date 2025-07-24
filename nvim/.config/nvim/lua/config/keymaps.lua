@@ -14,3 +14,7 @@ keymap.set("i", "jj", "<Esc>", { noremap = true, desc = "Escape insert mode", si
 -- Center cursor line when using <C-d>/<C-u>
 keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true, desc = "Center cursor when <C-d>", silent = true })
 keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true, desc = "Center cursor when <C-d>", silent = true })
+
+-- Better indenting in visual mode
+keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })
+keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
