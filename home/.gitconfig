@@ -8,7 +8,7 @@
 [diff]
 	tool = meld
 [credential]
-	helper = store
+	helper = cache
 [http]
 	postBuffer = 524288000
 [core]
