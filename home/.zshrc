@@ -121,3 +121,6 @@ export OZONE_PLATFORM=wayland
 # Conda
 export CONDA_CHANGEPS1="false"
 # source /opt/miniconda3/bin/activate
+
+# Cargo
+export PATH="$HOME/.cargo/bin:$PATH"
