@@ -4,7 +4,8 @@ configuration {
     show-icons:                  false;
 }
 
-@theme "~/.config/rofi/theme.rasi"
+// @theme "~/.config/rofi/theme.rasi"
+@theme "~/.config/rofi/colors/catpuccin.rasi"
 
 // Main //
 window {
@@ -16,8 +17,8 @@ window {
     cursor:                      "default";
     spacing:                     0em;
     padding:                     0em;
-    border-color:                @main-br;
-    background-color:            @main-bg;
+    border-color:                @selected;
+    background-color:            @background;
 }
 mainbox {
     enabled:                     true;
@@ -42,13 +43,13 @@ inputbar {
     enabled:                     true;
     padding:                     -0.2em 0.7em;
     children:                    [ "entry" ];
-    background-color:            @main-bg;
+    background-color:            @background;
     expand:                      true;
 }
 entry {
     enabled:                     true;
     padding:                     1.8em;
-    text-color:                  @main-fg;
+    text-color:                  @foreground;
     background-color:            transparent;
 }
 
@@ -77,7 +78,7 @@ listview {
     expand:                      false;
     cursor:                      "default";
     background-color:            transparent;
-    text-color:                  @main-fg;
+    text-color:                  @foreground;
 }
 dummy {
     spacing:                     0em;
@@ -91,11 +92,11 @@ element {
     padding:                     0.4em;
     cursor:                      pointer;
     background-color:            transparent;
-    text-color:                  @main-fg;
+    text-color:                  @foreground;
 }
 element selected.normal {
-    background-color:            @select-bg;
-    text-color:                  @select-fg;
+    background-color:            @foreground;
+    text-color:                  @background;
     border-radius:               0.5em;
 }
 element-text {

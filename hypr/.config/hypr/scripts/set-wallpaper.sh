@@ -22,4 +22,4 @@ fi
 swaybg -o '*' -i "$SELECTED_WALLPAPER" -m fill &
 
 # Guarda el wallpaper seleccionado en un archivo para persistencia
-echo "exec-once=swaybg -o \* -i $SELECTED_WALLPAPER -m fill" >$HOME/.config/hypr/autoexec.conf
+echo "exec-once=swaybg -o \* -i $SELECTED_WALLPAPER -m fill" >"$HOME/.config/hypr/autoexec.conf"
