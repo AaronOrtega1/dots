@@ -51,7 +51,14 @@
     "prefix": "sol",
     "body": [
       "solution = Solution()",
-      "print(solution.)"
+      "print(solution.${0})"
+    ],
+    "description": "solution"
+  },
+  "Printf": {
+    "prefix": "printf",
+    "body": [
+      "print(f'${0}')"
     ],
     "description": "solution"
   }

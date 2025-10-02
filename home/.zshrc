@@ -54,32 +54,14 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-alias matrix='cd $HOME/Documents/Code/Matrix/'
 alias notes='cd $HOME/Documents/127.0.0.1/'
-alias personal='cd $HOME/Documents/Code/PersonalProjects/'
-alias dots='cd $HOME/dots/'
 alias py='python3'
-alias update='sudo apt update && sudo apt upgrade -y'
-alias conf='cd /home/aarondev/.config/'
 alias ls='exa -alh --group-directories-first --icons'
 alias c='/usr/bin/clear'
 alias t='tmux'
-alias job='cd $HOME/Documents/Code/PersonalProjects/JobSeek/'
-alias vs='cd /mnt/c/Users/aaron/AppData/Roaming/Code/'
-alias gwm='cd /mnt/c/Users/aaron/.glaze-wm/'
-alias fl='cd /mnt/c/Users/aaron/AppData/Roaming/FlowLauncher/'
-alias ff='cd /mnt/c/Users/aaron/AppData/Roaming/Mozilla/Firefox/Profiles/33dy0j9y.dev-edition-default/'
-alias hypr='cd $HOME/.config/hypr/'
-alias docs='cd $HOME/Documents/'
-alias uni='cd $HOME/Documents/Universidad/'
 alias n='nvim'
 alias ..='cd ..'
-alias sonarstart='/opt/sonarqube/bin/linux-x86-64/sonar.sh start'
-alias sonarstop='/opt/sonarqube/bin/linux-x86-64/sonar.sh stop'
-alias sonarstatus='/opt/sonarqube/bin/linux-x86-64/sonar.sh status'
-alias sonar-scanner='/opt/sonarscanner/bin/sonar-scanner'
 alias code='env GDK_BACKEND=wayland OZONE_PLATFORM=wayland code --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto 2>/dev/null'
-alias down='cd $HOME/Downloads/'
 alias fastfetch='pokeget gengar --hide-name | fastfetch --logo-padding-top 4 --file-raw -'
 
 # Shell integration
@@ -124,3 +106,6 @@ export CONDA_CHANGEPS1="false"
 
 # Cargo
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Zoxide
+eval "$(zoxide init --cmd cd zsh)"

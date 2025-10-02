@@ -1,23 +1,24 @@
 #!/bin/bash
 
-# Directorio donde se guardarán las capturas
-DIRECTORIO="$HOME/Pictures/Screenshots/"
+# Directory where the screenshots will be saved
+DIRECTORY="$HOME/Pictures/Screenshots/"
 
 # Nombre de archivo con la fecha y hora actual
-# NOMBRE_ARCHIVO="screenshots_$(date +%Y-%m-%d_%H-%M-%S).png"
-NOMBRE_ARCHIVO="screenshots_$(date +%Y-%m-%d_%H-%M-%S).avif"
+# File name with the date and hour
+FILE_NAME="screenshots_$(date +%Y-%m-%d_%H-%M-%S).png"
+# NOMBRE_ARCHIVO="screenshots_$(date +%Y-%m-%d_%H-%M-%S).avif"
 
-# Ruta completa de la captura
-RUTA_COMPLETA="$DIRECTORIO/$NOMBRE_ARCHIVO"
+# Complete path of the screenshot
+COMPLETE_PATH="$DIRECTORY/$FILE_NAME"
 
-# Crear el directorio si no existe
-mkdir -p "$DIRECTORIO"
+# Create the directory if it doesn't exist
+mkdir -p "$DIRECTORY"
 
-# Usar slurp para seleccionar el área y grim para tomar la captura
-grim -g "$(slurp)" "$RUTA_COMPLETA"
+# Use slurp to select the area and grim to take the screenshot
+grim -g "$(slurp)" "$COMPLETE_PATH"
 
-# Copiar la imagen al portapapeles utilizando wl-copy
-cat "$RUTA_COMPLETA" | wl-copy
+# Copy the image to the clipboard using wl-copy
+cat "$COMPLETE_PATH" | wl-copy
 
-# Mensaje opcional para confirmar que se guardó la captura
-echo "Captura de pantalla guardada en $RUTA_COMPLETA y copiada al portapapeles."
+# Message to confirm that the screenshot was saved
+notify-send "Screenshot saved in $COMPLETE_PATH and copied to clipboard"

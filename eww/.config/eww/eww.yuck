@@ -1,0 +1,31 @@
+(defwindow pomodoro
+  :monitor 0
+  :geometry (geometry
+              :width 300
+              :height 200
+              :x "95%"
+              :y "5%"
+              :anchor "top right")
+  :stacking "overlay"
+  :focusable true
+  :visible false
+  :style (require "./style.css")
+  (box :class "pomodoro-container"
+    (box :class "timer-header"
+      (label :class "timer-mode" :text {pomodoro_mode})
+      (label :class "timer-time" :text {pomodoro_time})
+    )
+    (box :class "timer-controls"
+      (button :class "timer-btn start-btn" :onclick "pomodoro start" "▶")
+      (button :class "timer-btn pause-btn" :onclick "pomodoro pause" "⏸")
+      (button :class "timer-btn stop-btn" :onclick "pomodoro stop" "⏹")
+    )
+    (box :class "timer-sessions"
+      (label :class "session-counter" :text {pomodoro_sessions})
+    )
+  )
+)
+
+(defpoll pomodoro_time :interval "1s" "cat /tmp/pomodoro_time 2>/dev/null || echo '50:00'")
+(defpoll pomodoro_mode :interval "1s" "cat /tmp/pomodoro_mode 2>/dev/null || echo 'Idle'")
+(defpoll pomodoro_sessions :interval "5s" "cat /tmp/pomodoro_sessions 2>/dev/null || echo 'Sessions: 0/4'")

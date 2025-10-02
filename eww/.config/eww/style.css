@@ -1,0 +1,75 @@
+* {
+  all: unset;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 12px;
+}
+
+.pomodoro-container {
+  background-color: #1e1e2e;
+  border: 2px solid #cba6f7;
+  border-radius: 12px;
+  padding: 15px;
+  margin: 5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.timer-header {
+  margin-bottom: 15px;
+}
+
+.timer-mode {
+  color: #cba6f7;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.timer-time {
+  color: #cdd6f4;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.timer-controls {
+  margin: 15px 0;
+}
+
+.timer-btn {
+  background-color: #313244;
+  color: #cdd6f4;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: 0 5px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.timer-btn:hover {
+  background-color: #45475a;
+}
+
+.start-btn:hover {
+  background-color: #a6e3a1;
+  color: #1e1e2e;
+}
+
+.pause-btn:hover {
+  background-color: #f9e2af;
+  color: #1e1e2e;
+}
+
+.stop-btn:hover {
+  background-color: #f38ba8;
+  color: #1e1e2e;
+}
+
+.timer-sessions {
+  margin-top: 10px;
+}
+
+.session-counter {
+  color: #bac2de;
+  font-size: 11px;
+  font-style: italic;
+}

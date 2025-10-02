@@ -14,7 +14,6 @@ return {
       integrations = {
         aerial = true,
         alpha = true,
-        bufferline = true,
         cmp = true,
         dashboard = true,
         flash = true,
@@ -51,33 +50,18 @@ return {
         which_key = true,
       },
     },
+    specs = {
+      {
+        "akinsho/bufferline.nvim",
+        init = function()
+          local bufline = require("catppuccin.groups.integrations.bufferline")
+          function bufline.get()
+            return bufline.get_theme()
+          end
+        end,
+      },
+    },
   },
-  -- ANDROMEDA
-  -- {
-  --   "sainnhe/sonokai",
-  --   priority = 1000,
-  --   config = function()
-  --     vim.g.sonokai_transparent_background = "1"
-  --     vim.g.sonokai_enable_italic = "1"
-  --     vim.g.sonokai_style = "andromeda"
-  --     vim.cmd.colorscheme("sonokai")
-  --   end,
-  -- },
-  -- TOKYONIGHT CONFIG
-  -- {
-  --   "folke/tokyonight.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {
-  --     style = "night",
-  --     transparent = true,
-  --     styles = {
-  --       sidebars = "transparent",
-  --       floats = "transparent",
-  --     },
-  --   },
-  -- },
-
   {
     "LazyVim/LazyVim",
     opts = {

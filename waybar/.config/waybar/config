@@ -13,6 +13,7 @@
       "clock",
     ],
     "modules-right": [
+      // "custom/pomodoro",
       "backlight",
       "pulseaudio",
       "network",
@@ -118,6 +119,13 @@
       "min-length": 7,
       "max-length": 7
     },
+    "custom/pomodoro": {
+      "format": "🍅 {}",
+      "exec": "echo 'Pomodoro'",
+      "on-click": "eww open pomodoro",
+      "on-click-right": "eww close pomodoro",
+      "tooltip": false
+    },
     "backlight": {
       "format": "{icon} {percent}%",
       "format-icons": [
@@ -192,6 +200,7 @@
       "clock",
     ],
     "modules-right": [
+      // "custom/pomodoro",
       "pulseaudio",
       "network",
       "battery",
@@ -303,6 +312,13 @@
       "on-click": "playerctl play-pause",
       "min-length": 5,
       "max-length": 35
+    },
+    "custom/pomodoro": {
+      "format": "🍅 {}",
+      "exec": "echo 'Pomodoro'",
+      "on-click": "eww open pomodoro",
+      "on-click-right": "eww close pomodoro",
+      "tooltip": false
     },
     "backlight": {
       "format": "{icon} {percent}%",

@@ -1,12 +1,19 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# Ruta a la carpeta de wallpapers
-WALLPAPER_DIR="$HOME/.config/hypr/WallPapers"
+WALLPAPER_DIR="../WallPapers/"
 
-# Abre un selector de archivos (usando Zenity en este caso)
-SELECTED_WALLPAPER=$(zenity --file-selection --title="Selecciona un wallpaper" --filename="$WALLPAPER_DIR/" --file-filter="*.png *.jpg")
+# find wallpapers (jpg, png, jpeg)
+WALLPAPERS=$(find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.jpeg" \) | sort)
 
-# Si se selecciona un archivo, cambia el wallpaper
-if [ -n "$SELECTED_WALLPAPER" ]; then
-  ~/.config/hypr/scripts/set-wallpaper.sh $(basename "$SELECTED_WALLPAPER")
-fi
+# pick one with preview
+SELECTED=$(echo "$WALLPAPERS" | tofi --preview --style ~/.config/tofi/catppuccin-mocha --prompt "󰋩 Wallpaper:")
+
+[ -z "$SELECTED" ] && exit 0
+
+# preload and apply with hyprpaper
+hyprctl hyprpaper preload "$SELECTED"
+hyprctl hyprpaper wallpaper "eDP-1,$SELECTED"
+
+# optional: save as default for next login
+sed -i '/^wallpaper = eDP-1/d' ~/.config/hypr/hyprpaper.conf
+echo "wallpaper = eDP-1,$SELECTED" >>~/.config/hypr/hyprpaper.conf
