@@ -6,7 +6,7 @@
     "output": "eDP-1",
     "modules-left": [
       "hyprland/workspaces",
-      "custom/wallpaper",
+      // "custom/wallpaper",
       "custom/keyboard-layout"
     ],
     "modules-center": [
@@ -193,7 +193,7 @@
     "output": "!eDP-1",
     "modules-left": [
       "hyprland/workspaces",
-      "custom/wallpaper",
+      // "custom/wallpaper",
       "custom/keyboard-layout",
     ],
     "modules-center": [
