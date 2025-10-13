@@ -1,216 +1,151 @@
-/* Japanese Mocha */
-/* @define-color background        #161320; */
-/* @define-color foreground        #7984a4; */
+/* colors defined at top for easy configuring */
 @define-color background        #1E1E2E;
-@define-color foreground        #cdd6f4;
-@define-color alert             #f28fad;
-/* @define-color active            #abe9b3; */
-@define-color active            #89b4fa;
-@define-color hover             #e8a2af;
+@define-color text              #CDD6F4;
+@define-color borders           #5E81AC;
+@define-color focused           #89B4FA;
+@define-color urgent            #F38BA8;
+@define-color hover             #CBA6F7;
 
+
+/* font declared */
 * {
-  color: @foreground;
-  border: 0;
-  border-radius: 10px;
-  font-family: "JetBrainsMono Nerd Font";
-  font-size: 14px;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 15px;
+}
+
+#custom-openbracket,
+#custom-closebracket{
+    margin: 0 5px ;
 }
 
 window#waybar {
-  background: transparent;
+    background-color: transparent;
+    margin: 4px 0 0 4px;
+    border-bottom: 0;
+    color: @text;
+    transition: background-color 0.5s;
 }
 
 window#waybar.hidden {
-  opacity: 0.2;
+    opacity: 0.2;
 }
 
-#window {
-  margin-top: 6px;
-  padding-left: 10px;
-  padding-right: 10px;
-  transition: none;
-  color: transparent;
-  background: transparent;
+window#waybar.empty #window {
+    background-color: transparent;
 }
 
-/* ================================================ */
-/* ================= LEFT MODULES ================= */
-/* ================================================ */
-#workspaces {
-  margin-top: 4px;
-  margin-left: 4px;
-  margin-bottom: 0px;
-  font-size: 4px;
-  background: @background;
-  transition: none;
+/* configuring the modules */
+.modules-left {
+    margin: 8px 0 0 8px;
+    padding: 0 0 0 7px;
+    background-color: @background;
+    border: 2px solid @borders;
 }
 
+.modules-center {
+    margin: 8px 0 0 0;
+    padding: 0 10px 0 10px;
+    background-color: @background;
+    border: 2px solid @borders;
+}
+
+.modules-right {
+    margin: 8px 8px 0 0;
+    padding: 0 10px 0 10px;
+    background-color: @background;
+    border: 2px solid @borders;
+}
+
+/*
+ * ========================================
+ * LEFT
+ * ========================================
+ */
+
+/* workspace */
 #workspaces button {
-  transition: none;
-  color: @foreground;
-  background: transparent;
-  font-size: 16px;
-  border-radius: 2px;
+    padding: 0 4px;
+    background: transparent;
+    color: @text;
+    border-radius: 0;
+    transition: none;
 }
-
-#workspaces button.urgent {
-  background: transparent;
-  font-size: 4px;
-  border-top: 2px solid @alert;
-  border-bottom: 2px solid @alert;
-}
-
-#workspaces button.active {
-  color: @foreground;
-  border-top: 2px solid @active;
-  border-bottom: 2px solid @active;
-  /* background: @foreground; */
-}
-
 #workspaces button:hover {
-  box-shadow: inherit;
-  text-shadow: inherit;
-  color: @hover;
-  border-color: @hover;
+    color: @hover;
+}
+#workspaces button.active {
+    color: @focused;
+    background-color: @background;
+}
+#workspaces button.urgent {
+    background-color: @urgent;
 }
 
-#workspaces button.active:hover {
-  color: @hover;
+/* media player */
+#mpris {
+    padding: 0 9px ;
+    background-color: @background;
+    color: @text;
+}
+#mpris.playing {
+    background-color: @background;
+    color: @text;
 }
 
-#custom-wallpaper {
-  margin-top: 6px;
-  margin-bottom: 0px;
-  margin-left: 8px;
-  padding-left: 7px;
-  padding-right: 12px;
-  transition: none;
-  background: @background;
-  color: @foreground;
+/*
+ * ========================================
+ * CENTER
+ * ========================================
+ */
+#window{
+    padding: 0 5px;
 }
 
-#custom-keyboard-layout {
-  margin-top: 6px;
-  margin-left: 8px;
-  padding-left: 10px;
-  margin-bottom: 0px;
-  padding-right: 10px;
-  transition: none;
-  background: @background;
-  color: @foreground;
-}
+/*
+ * ========================================
+ * RIGHT
+ * ========================================
+ */
 
-/* ================================================ */
-/* ================ CENTER MODULES ================ */
-/* ================================================ */
-
-#clock {
-  margin-top: 4px;
-  margin-bottom: 0px;
-  padding-left: 10px;
-  padding-right: 10px;
-  transition: none;
-  background: @background;
-  color: @foreground;
-}
-
-#custom-cpuinfo {
-  margin-left: 8px;
-}
-
-#custom-launcher {
-  font-size: 16px;
-  margin-top: 6px;
-  margin-left: 8px;
-  padding-left: 7px;
-  padding-right: 12px;
-  transition: none;
-  background: @background;
-  color: @foreground;
-}
-
-#custom-launcher:hover {
-  background: @foreground;
-  color: @background;
-}
-
-/* ================================================ */
-/* ================= RIGHT MODULES ================ */
-/* ================================================ */
-
-#custom-pomodoro {
-  margin-top: 6px;
-  margin-left: 8px;
-  padding: 5px 10px;
-  padding-right: 12px;
-  background: @background;
-  color: @foreground;
-}
-
-#custom-media,
-#backlight,
-#pulseaudio,
-#network,
+/* module general styles */
+#clock,
 #battery,
-#memory,
 #cpu,
-#custom-cpuinfo,
-#network,
-#tray {
-  margin-top: 4px;
-  margin-left: 8px;
-  padding: 5px 8px;
-  margin-bottom: 0px;
-  transition: none;
-  background: @background;
-  color: @foreground;
+#memory,
+#pulseaudio,
+#network {
+  padding: 0 10px ;
 }
 
-#custom-keyboard-layout {
-  margin-top: 6px;
-  margin-left: 8px;
-  padding-left: 10px;
-  margin-bottom: 0px;
-  padding-right: 10px;
-  transition: none;
-  background: @background;
-  color: @foreground;
+#battery:hover,
+#custom-cpu:hover,
+#network:hover,
+#backlight:hover{
+    color: @hover;
+}
+
+
+/* Remaining Modules */
+#backlight,
+#wireplumber{
+    padding: 0 5px;
 }
 
 #battery.charging,
 #battery.plugged {
-  background-color: @background;
-  color: @foreground;
+  background-color: @borders ;
+  color: @background;
 }
 
 #battery.critical:not(.charging) {
-  color: @foreground;
-  background-color: @background;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+  background-color: @urgent;
+  color: @text;
+  animation: blink 0.5s steps(12) infinite alternate;
 }
 
 @keyframes blink {
   to {
-    background-color: @alert;
-    color: @background;
+    background-color: @background;
+    color: @text;
   }
-}
-
-#battery {
-  margin-right: 4px;
-}
-
-/* ================================================ */
-/* ==================== EXTRAS ==================== */
-/* ================================================ */
-#idle_inhibitor {
-  background-color: #2d3436;
-}
-#idle_inhibitor.activated {
-  background-color: #ecf0f1;
-  color: #2d3436;
 }
