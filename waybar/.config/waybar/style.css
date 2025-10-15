@@ -37,7 +37,7 @@ window#waybar.empty #window {
 /* configuring the modules */
 .modules-left {
     margin: 8px 0 0 8px;
-    padding: 0 0 0 7px;
+    padding: 0 7px 0 7px;
     background-color: @background;
     border: 2px solid @borders;
 }
@@ -64,7 +64,7 @@ window#waybar.empty #window {
 
 /* workspace */
 #workspaces button {
-    padding: 0 4px;
+    padding: 0px 8px 0px 4px;
     background: transparent;
     color: @text;
     border-radius: 0;
@@ -83,8 +83,7 @@ window#waybar.empty #window {
 
 /* media player */
 #mpris {
-    padding: 0 9px ;
-    background-color: @background;
+    padding: 0 4px ;
     color: @text;
 }
 #mpris.playing {

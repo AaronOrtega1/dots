@@ -65,19 +65,6 @@
         "custom/closebracket"
       ]
     },
-    "mpris": {
-      "format": "[   {status_icon} | {dynamic} ]",
-      "interval": 1,
-      "dynamic-len": 40,
-      "status-icons": {
-        "playing": "▶",
-        "paused": "⏸",
-        "stopped": ""
-      },
-      "dynamic-order": [
-        "artist"
-      ]
-    },
     /*
     * ========================================
     * Center
