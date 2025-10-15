@@ -3,9 +3,8 @@
     "height": 40,
     "output": "eDP-1",
     "modules-left": [
-      "group/workspaces",
+      "group/workspaces"
       // "group/Utilities",
-      "mpris"
     ],
     "modules-center": [
       "group/clock"
@@ -145,11 +144,35 @@
       "modules": [
         "custom/openbracket",
         "network",
+        "custom/bluetooth",
         "backlight",
         "pulseaudio",
         "battery",
         "custom/closebracket"
       ]
+    },
+    "network": {
+      "format-wifi": "{icon}",
+      "format-disconnected": "⚠",
+      "exec": "~/.config/waybar/scripts/essid.sh",
+      "interval": 30,
+      "on-click": "~/.config/waybar/scripts/wifimenu.sh",
+      "tooltip": true,
+      "tooltip-format": "{ipaddr}\n{ssid} ({signalStrength}%)",
+      "format-icons": [
+        "󰤯",
+        "󰤟",
+        "󰤢",
+        "󰤥",
+        "󰤨"
+      ]
+    },
+    "custom/bluetooth": {
+      "format": "{}",
+      "tooltip": false,
+      "exec": "~/.config/waybar/scripts/bluetoot-status.sh",
+      "interval": 5,
+      "on-click": "~/.config/waybar/scripts/rofi-bluetooth"
     },
     "battery": {
       "states": {
@@ -172,22 +195,6 @@
       "adapter": "ADP0",
       "interval": 20
     },
-    "network": {
-      "format-wifi": "{icon}",
-      "format-disconnected": "⚠",
-      "exec": "~/.config/waybar/scripts/essid.sh",
-      "interval": 30,
-      "on-click": "~/.config/waybar/scripts/wifimenu.sh",
-      "tooltip": true,
-      "tooltip-format": "{ipaddr}\n{ssid} ({signalStrength}%)",
-      "format-icons": [
-        "󰤯",
-        "󰤟",
-        "󰤢",
-        "󰤥",
-        "󰤨"
-      ]
-    },
     "backlight": {
       "format": "{icon}",
       "format-icons": [
@@ -208,11 +215,10 @@
     "pulseaudio": {
       "tooltip": false,
       "format": "{icon}{volume}%",
-      "format-muted": " ",
-      "on-click": "pavucontrol",
+      "format-muted": "",
+      "on-click": "pavucontrol-qt",
       "scroll-step": 5,
       "format-icons": {
-        "headphone": "",
         "default": [
           " :",
           " :",
@@ -368,32 +374,12 @@
       "modules": [
         "custom/openbracket",
         "network",
+        "custom/bluetooth",
         "backlight",
         "pulseaudio",
         "battery",
         "custom/closebracket"
       ]
-    },
-    "battery": {
-      "states": {
-        "good": 95,
-        "warning": 40,
-        "critical": 30
-      },
-      "format": "{icon} {capacity}%",
-      "format-charging": " {capacity}%",
-      "format-plugged": " {capacity}%",
-      "format-alt": "{time} {icon}",
-      "format-icons": [
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
-      "bat": "BAT0",
-      "adapter": "ADP0",
-      "interval": 20
     },
     "network": {
       "format-wifi": "{icon}",
@@ -410,6 +396,13 @@
         "󰤥",
         "󰤨"
       ]
+    },
+    "custom/bluetooth": {
+      "format": "{}",
+      "tooltip": false,
+      "exec": "~/.config/waybar/scripts/bluetoot-status.sh",
+      "interval": 5,
+      "on-click": "~/.config/waybar/scripts/rofi-bluetooth"
     },
     "backlight": {
       "format": "{icon}",
@@ -431,17 +424,37 @@
     "pulseaudio": {
       "tooltip": false,
       "format": "{icon}{volume}%",
-      "format-muted": " ",
-      "on-click": "pavucontrol",
+      "format-muted": "",
+      "on-click": "pavucontrol-qt",
       "scroll-step": 5,
       "format-icons": {
-        "headphone": "",
         "default": [
           " :",
           " :",
           " :"
         ]
       }
+    },
+    "battery": {
+      "states": {
+        "good": 95,
+        "warning": 40,
+        "critical": 30
+      },
+      "format": "{icon} {capacity}%",
+      "format-charging": " {capacity}%",
+      "format-plugged": " {capacity}%",
+      "format-alt": "{time} {icon}",
+      "format-icons": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "bat": "BAT0",
+      "adapter": "ADP0",
+      "interval": 20
     }
   }
 ]

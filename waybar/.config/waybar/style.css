@@ -78,7 +78,7 @@ window#waybar.empty #window {
     background-color: @background;
 }
 #workspaces button.urgent {
-    background-color: @urgent;
+    color: @urgent;
 }
 
 /* media player */
@@ -113,6 +113,7 @@ window#waybar.empty #window {
 #cpu,
 #memory,
 #pulseaudio,
+#custom-bluetooth,
 #network {
   padding: 0 10px ;
 }

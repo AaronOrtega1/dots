@@ -7,7 +7,7 @@
     horizontal_padding = 12
     corner_radius = 0
     transparency = 10
-    gap_size = 8
+    gap_size = 6
     sort = yes
     indicate_hidden = yes
     shrink = no

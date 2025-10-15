@@ -1,0 +1,166 @@
+* {
+    /* Colors */
+    bg: #1E1E2E;
+    bg-alt: #282839;
+    fg: #CDD6F4;
+
+    urgent: #F38BA8;
+
+    border: #5E81AC;
+    selected: #89B4FA;
+    comment: #313244;
+
+    background-color: transparent;
+    text-color: @fg;
+}
+
+window {
+    background-color: @bg;
+    border: 2px;
+    border-color: @border;
+    // location: north west;
+    location: center;
+    // y-offset: 46;
+    // x-offset: 10;
+    padding: 15px 30px 0px 30px;
+    width: 500px;
+    height: 300px;
+    font: "JetBrains Mono Nerd Font 12";
+}
+
+mainbox {
+    border: 0;
+    padding: 0;
+    spacing: 0px;
+}
+
+message {
+    border: 0;
+    background-color: @bg-alt;
+    padding: 0px;
+    border-radius: 0px;
+}
+
+textbox {
+    text-color: @fg;
+}
+
+inputbar {
+    children: [prompt, entry];
+    background-color: @bg;
+    padding: 5px 5px 15px 5px;
+}
+
+prompt {
+    text-color: @urgent;
+    font: "JetBrains Mono Nerd Font 12";
+    padding: 0px 10px 0px 0px;
+}
+
+entry {
+    placeholder: "Search...";
+    placeholder-color: @fg;
+    text-color: @fg;
+}
+
+
+listview {
+    border: 0;
+    padding: 5px 0;
+    columns: 1;
+    lines: 8;
+    spacing: 5px;
+    scrollbar: true;
+    fixed-height: false;
+}
+
+scrollbar {
+    width: 0px;
+    border: 0;
+    handle-color: transparent;
+    handle-width: 0px;
+    padding: 0;
+    background-color: transparent;
+}
+
+element {
+    border: 0;
+    border-radius: 0px;
+    padding: 5px;
+    background-color: transparent;
+    text-color: @comment;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color: @comment;
+}
+
+element normal.urgent {
+    background-color: transparent;
+    text-color: @bg;
+}
+
+element normal.active {
+    background-color: transparent;
+    text-color: @comment;
+}
+
+element selected.normal {
+    background-color: transparent;
+    text-color: @fg;
+    border: 2px;
+    border-color: @border;
+}
+
+element selected.urgent {
+    background-color: @urgent;
+    text-color: @bg;
+}
+
+element selected.active {
+    background-color: @fg;
+    text-color: @bg;
+}
+
+element alternate.normal {
+    background-color: transparent;
+    text-color: @comment;
+}
+
+element-icon {
+    size: 24px;
+    margin: 0 10px 0 0;
+}
+
+element-text {
+    vertical-align: 0.5;
+    text-color: inherit;
+}
+
+mode-switcher {
+    spacing: 10px;
+    background-color: @bg-alt;
+    border-radius: 0px;
+    padding: 10px;
+}
+
+button {
+    padding: 0px;
+    background-color: transparent;
+    text-color: @fg;
+    border-radius: 0px;
+}
+
+button selected {
+    background-color: @fg;
+    text-color: @bg;
+}
+
+error-message {
+    padding: 20px;
+    border: 2px solid;
+    border-color: @urgent;
+    border-radius: 0px;
+    background-color: @bg;
+}
