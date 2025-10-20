@@ -18,3 +18,7 @@ keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true, desc = "Center cursor when
 -- Better indenting in visual mode
 keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })
 keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
+
+-- Center cursors when searching
+keymap.set("n", "n", "nzzzv", { noremap = true, desc = "Center cursor when <C-d>", silent = true })
+keymap.set("n", "N", "Nzzzv", { noremap = true, desc = "Center cursor when <C-d>", silent = true })

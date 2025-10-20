@@ -54,6 +54,22 @@ vim.api.nvim_create_autocmd({ "FileType", "BufEnter", "BufWinEnter" }, {
   end,
 })
 
+-- Java print
+vim.api.nvim_create_autocmd({ "FileType", "BufEnter", "BufWinEnter" }, {
+  pattern = { "java" },
+  callback = function()
+    vim.keymap.set("n", "<leader>cl", function()
+      local var = vim.fn.expand("<cword>")
+      if var ~= "" then
+        local row = vim.api.nvim_win_get_cursor(0)[1]
+        local indent = vim.api.nvim_get_current_line():match("^%s*") or ""
+        local debug_line = indent .. 'System.out.println("' .. var .. " [L" .. row .. ']: " + ' .. var .. ");"
+        vim.api.nvim_buf_set_lines(0, row, row, false, { debug_line })
+      end
+    end, { buffer = true, desc = "Python debug print" })
+  end,
+})
+
 -- javascript console.log
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "javascript", "typescript", "javascriptreact", "typescriptreact" },

@@ -46,6 +46,9 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
+export XKB_DEFAULT_LAYOUT=us
+export XKB_DEFAULT_VARIANT=intl
+
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
@@ -79,13 +82,18 @@ source /usr/share/nvm/init-nvm.sh
 
 # Initialize or attach to tmux session
 if command -v tmux &> /dev/null; then
-    # Verificar si ya está en una sesión tmux
+    # Verify if already in a tmux session
     if [ -z "$TMUX" ]; then
-        # Si hay sesiones disponibles, conectarse a la primera, de lo contrario crear una nueva
+      # If there are available sessions, connect to the first second one (dev), otherwise create sessions
         if tmux ls &> /dev/null; then
-            tmux attach-session -t 0
+            tmux attach-session -t dev
         else
-            tmux new-session
+            # Create principal session "spotify"
+            tmux new-session -d -s spotify
+            # Create second session "dev"
+            tmux new-session -d -s dev
+            # Connect to the session "dev" (second one created)
+            tmux attach-session -t dev
         fi
     fi
 fi

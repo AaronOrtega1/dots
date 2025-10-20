@@ -1,6 +1,7 @@
 /* colors defined at top for easy configuring */
 @define-color background        #1E1E2E;
 @define-color text              #CDD6F4;
+@define-color empty             #7F849C;
 @define-color borders           #5E81AC;
 @define-color focused           #89B4FA;
 @define-color urgent            #F38BA8;
@@ -64,22 +65,26 @@ window#waybar.empty #window {
 
 /* workspace */
 #workspaces button {
-    padding: 0px 8px 0px 4px;
-    background: transparent;
-    color: @text;
-    border-radius: 0;
-    transition: none;
+  padding: 0px 8px 0px 4px;
+  background: transparent;
+  color: @text;
+  border-radius: 0;
+  transition: none;
+}
+#workspaces button.empty {
+  color: @empty;
 }
 #workspaces button:hover {
-    color: @hover;
+  color: @hover;
+  border: transparent;
 }
 #workspaces button.active {
-    color: @focused;
-    background-color: @background;
+  color: @focused;
 }
 #workspaces button.urgent {
     color: @urgent;
 }
+
 
 /* media player */
 #mpris {
@@ -120,6 +125,8 @@ window#waybar.empty #window {
 #battery:hover,
 #custom-cpu:hover,
 #network:hover,
+#pulseaudio:hover,
+#custom-bluetooth:hover,
 #backlight:hover{
     color: @hover;
 }

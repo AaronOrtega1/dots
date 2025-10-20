@@ -100,9 +100,6 @@ bind-key -T copy-mode-vi 'v' send -X copy-selection
 # Set status-position
 set-option -g status-position top
 
-# set -g @nova-pane "#I#{?pane_in_mode,  #{pane_mode},}  #(basename #{pane_current_path})"
-# set -g @nova-segment-mode "#{?client_prefix,Ω,󰣇}"
-
 # Start counting pane and window number at 1
 set -g base-index 1
 setw -g pane-base-index 1
