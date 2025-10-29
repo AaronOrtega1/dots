@@ -35,6 +35,7 @@ return {
         desc = "Remove File from Harpoon at " .. i,
       })
     end
+
     for i = 1, 9 do
       table.insert(keys, {
         "<leader>" .. i,
