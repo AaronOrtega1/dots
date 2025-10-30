@@ -66,6 +66,7 @@ alias n='nvim'
 alias ..='cd ..'
 alias code='env GDK_BACKEND=wayland OZONE_PLATFORM=wayland code --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto 2>/dev/null'
 alias fastfetch='pokeget gengar --hide-name | fastfetch --logo-padding-top 4 --file-raw -'
+alias om='sh $HOME/.local/bin/quest-archiver.sh'
 
 # Shell integration
 eval "$(fzf --zsh)"

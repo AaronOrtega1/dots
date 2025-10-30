@@ -17,11 +17,11 @@ error_symbol = '[❯](#f38ba8) '
 
 [fossil_branch]
 symbol = " "
-style = "bold #94e2d5"  # Teal
+style = "bold #94e2d5" # Teal
 
 [git_branch]
 symbol = " "
-style = "bold #94e2d5"  # Teal
+style = "bold #94e2d5" # Teal
 
 [git_status]
 style = "fg:#94e2d5"
@@ -38,15 +38,15 @@ format = '[$all_status$ahead_behind ]($style)'
 
 [golang]
 symbol = " "
-style = "bold #bd93f9"  # Green
+style = "bold #bd93f9" # Green
 
 [hg_branch]
 symbol = " "
-style = "bold #f38ba8"  # Red
+style = "bold #f38ba8" # Red
 
 [hostname]
 ssh_symbol = " "
-style = "bold #94e2d5"  # Teal
+style = "bold #94e2d5" # Teal
 
 [os.symbols]
 Alpaquita = " "
@@ -114,7 +114,7 @@ symbol = "󱘗 "
 style = "bold #bd93f9"
 
 [aws]
-symbol = "  "
+symbol = " "
 style = "bold #bd93f9"
 
 [c]
@@ -127,7 +127,7 @@ style = "bold #bd93f9"
 
 [docker_context]
 symbol = " "
-style = "bold #89b4fa"  # Blue
+style = "bold #89b4fa" # Blue
 
 [java]
 symbol = " "
@@ -145,3 +145,7 @@ style = "bold #bd93f9"
 min_time = 500
 style = "bold #bd93f9"
 disabled = false
+
+[terraform]
+symbol = " "
+style = "bold #bd93f9"
