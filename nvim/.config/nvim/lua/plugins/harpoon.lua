@@ -32,7 +32,8 @@ return {
         function()
           require("harpoon"):list():remove_at(i)
         end,
-        desc = "Remove File from Harpoon at " .. i,
+        -- desc = "Remove File from Harpoon at " .. i,
+        desc = "which_key_ignore",
       })
     end
 
@@ -42,7 +43,7 @@ return {
         function()
           require("harpoon"):list():select(i)
         end,
-        desc = "Harpoon to File " .. i,
+        desc = "which_key_ignore",
       })
     end
     return keys
