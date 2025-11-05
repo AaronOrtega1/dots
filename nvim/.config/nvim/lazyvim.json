@@ -1,32 +1,5 @@
 {
-  "extras": [
-    "lazyvim.plugins.extras.coding.blink",
-    "lazyvim.plugins.extras.coding.mini-comment",
-    "lazyvim.plugins.extras.coding.mini-snippets",
-    "lazyvim.plugins.extras.coding.mini-surround",
-    "lazyvim.plugins.extras.coding.nvim-cmp",
-    "lazyvim.plugins.extras.dap.core",
-    "lazyvim.plugins.extras.editor.fzf",
-    "lazyvim.plugins.extras.editor.harpoon2",
-    "lazyvim.plugins.extras.editor.inc-rename",
-    "lazyvim.plugins.extras.editor.mini-files",
-    "lazyvim.plugins.extras.editor.snacks_picker",
-    "lazyvim.plugins.extras.lang.docker",
-    "lazyvim.plugins.extras.lang.ember",
-    "lazyvim.plugins.extras.lang.java",
-    "lazyvim.plugins.extras.lang.json",
-    "lazyvim.plugins.extras.lang.prisma",
-    "lazyvim.plugins.extras.lang.python",
-    "lazyvim.plugins.extras.lang.tailwind",
-    "lazyvim.plugins.extras.lang.terraform",
-    "lazyvim.plugins.extras.lang.toml",
-    "lazyvim.plugins.extras.lang.typescript",
-    "lazyvim.plugins.extras.lang.yaml",
-    "lazyvim.plugins.extras.test.core",
-    "lazyvim.plugins.extras.util.dot",
-    "lazyvim.plugins.extras.util.mini-hipatterns"
-  ],
-  "install_version": 8,
+  "extras": [],
   "news": {
     "NEWS.md": "11866"
   },
