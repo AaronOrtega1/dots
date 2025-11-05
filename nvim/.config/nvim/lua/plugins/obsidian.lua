@@ -64,7 +64,7 @@ return {
     require('obsidian').setup(opts)
     local custom_obsidian = require 'plugins.config.obsidian'
     vim.keymap.set('n', '<leader>on', custom_obsidian.create_new_note, { desc = '[O]bsidian [N]ote' })
-    vim.keymap.set('n', '<leader>od', ':Obsidian dailies<CR>', { desc = '[O]bsidian [D]aily Note' })
+    vim.keymap.set('n', '<leader>od', ':Obsidian today<CR>', { desc = '[O]bsidian Today [D]aily Note' })
     vim.keymap.set('n', '<leader>ob', ':Obsidian backlinks<CR>', { desc = '[O]bsidian [B]acklinks' })
     vim.keymap.set('n', '<leader>ot', ':Obsidian tags<CR>', { desc = '[O]bsidian [T]ags' })
     vim.keymap.set('n', '<leader>oo', ':Obsidian open<CR>', { desc = '[O]bsidian [O]pen' })

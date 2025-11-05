@@ -8,6 +8,7 @@ return {
     lazy = false,
     ---@type snacks.Config
     opts = {
+      notifier = { enabled = true },
       explorer = { enabled = false },
       picker = {
         enabled = true,
@@ -60,29 +61,29 @@ return {
         function()
           Snacks.picker.files()
         end,
-        desc = '[S]earch [F]iles',
+        desc = '[F]ind [F]iles',
       },
       {
-        '<leader>sf',
+        '<leader>ff',
         function()
           Snacks.picker.files()
         end,
-        desc = '[S]earch [F]iles',
+        desc = '[F]ind [F]iles',
       },
       {
-        '<leader>sb',
+        '<leader>fg',
+        function()
+          Snacks.picker.git_files()
+        end,
+        desc = '[F]ind [F]iles ([g]it-files)',
+      },
+      {
+        '<leader>fb',
         function()
           Snacks.picker.buffers()
         end,
-        desc = '[S]earch [B]uffers',
+        desc = '[F]ind [B]uffers',
       },
-      -- {
-      --   '<leader>e',
-      --   function()
-      --     Snacks.explorer()
-      --   end,
-      --   desc = '[E]xplorer',
-      -- },
       {
         '<leader>fp',
         function()
@@ -111,6 +112,14 @@ return {
         end,
         desc = '[S]earch [K]eymaps',
       },
+
+      -- {
+      --   '<leader>e',
+      --   function()
+      --     Snacks.explorer()
+      --   end,
+      --   desc = '[E]xplorer',
+      -- },
     },
   },
 }

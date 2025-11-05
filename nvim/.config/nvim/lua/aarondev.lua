@@ -13,7 +13,10 @@ local rtp = vim.opt.rtp
 rtp:prepend(lazypath)
 
 require('lazy').setup({
-  { import = 'plugins' },
+  spec = {
+    { import = 'plugins' },
+  },
+  change_detection = { notify = false },
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
