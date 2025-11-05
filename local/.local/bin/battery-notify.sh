@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 
-# Get battery percentage from upower (works on most Arch laptops)
-PERCENT=$(upower -i $(upower -e | grep BAT) | grep -E "percentage" | awk '{print $2}' | tr -d '%')
+# Obtener el dispositivo de batería
+BATTERY=$(upower -e | grep BAT)
 
-if [ "$PERCENT" -le 30 ]; then
+# Obtener porcentaje y estado actual
+PERCENT=$(upower -i "$BATTERY" | grep -E "percentage" | awk '{print $2}' | tr -d '%')
+STATE=$(upower -i "$BATTERY" | grep -E "state" | awk '{print $2}')
+
+# Si batería menor a 30% y no está cargando
+if [ "$PERCENT" -lt 30 ] && [ "$STATE" = "discharging" ]; then
   notify-send -u critical "󰁽 Battery Low" "Battery at ${PERCENT}%!"
 fi

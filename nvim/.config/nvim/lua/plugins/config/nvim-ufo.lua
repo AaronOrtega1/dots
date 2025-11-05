@@ -1,7 +1,7 @@
 local handler = function(virtText, lnum, endLnum, width, truncate)
   local newVirtText = {}
   local foldedLines = endLnum - lnum
-  local suffix = (" 󰁂  %d"):format(foldedLines)
+  local suffix = (' 󰁂  %d'):format(foldedLines)
   local sufWidth = vim.fn.strdisplaywidth(suffix)
   local targetWidth = width - sufWidth
   local curWidth = 0
@@ -18,40 +18,31 @@ local handler = function(virtText, lnum, endLnum, width, truncate)
       chunkWidth = vim.fn.strdisplaywidth(chunkText)
       -- str width returned from truncate() may less than 2nd argument, need padding
       if curWidth + chunkWidth < targetWidth then
-        suffix = suffix .. (" "):rep(targetWidth - curWidth - chunkWidth)
+        suffix = suffix .. (' '):rep(targetWidth - curWidth - chunkWidth)
       end
       break
     end
     curWidth = curWidth + chunkWidth
   end
-  local rAlignAppndx = math.max(math.min(vim.opt.textwidth["_value"], width - 1) - curWidth - sufWidth, 0)
-  suffix = (" "):rep(rAlignAppndx) .. suffix
-  table.insert(newVirtText, { suffix, "MoreMsg" })
+  local rAlignAppndx = math.max(math.min(vim.opt.textwidth['_value'], width - 1) - curWidth - sufWidth, 0)
+  suffix = (' '):rep(rAlignAppndx) .. suffix
+  table.insert(newVirtText, { suffix, 'MoreMsg' })
   return newVirtText
 end
 
-require("ufo").setup({
+require('ufo').setup {
   fold_virt_text_handler = handler,
   enable_get_fold_virt_text = true,
-})
+}
 
 -- Keymap para toggle fold (za)
-vim.keymap.set("n", "za", function()
-  local winid = require("ufo").peekFoldedLinesUnderCursor()
+vim.keymap.set('n', 'za', function()
+  local winid = require('ufo').peekFoldedLinesUnderCursor()
   if winid then
-    -- Si hay un fold, abrirlo
-    require("ufo").openFoldsUnderCursor()
+    require('ufo').openFoldsUnderCursor()
   else
-    -- Si no hay fold, intentar cerrarlo
-    vim.cmd("normal! zc")
+    vim.cmd 'normal! zc'
   end
-end, { desc = "Alternar fold bajo cursor" })
+end, { desc = 'which_key_ignore' })
 
-vim.keymap.set("n", "zR", require("ufo").openAllFolds)
-vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
-vim.keymap.set("n", "zr", require("ufo").openFoldsExceptKinds)
-vim.keymap.set("n", "<leader>K", function()
-  local _ = require("ufo").peekFoldedLinesUnderCursor()
-end, {
-  desc = "Preview folded maps",
-})
+vim.keymap.set('n', 'zR', require('ufo').openAllFolds, { desc = 'which_key_ignore' })

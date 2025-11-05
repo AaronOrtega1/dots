@@ -1,123 +1,80 @@
--- Set up autocmd to disable Copilot in specific directories
--- vim.api.nvim_create_autocmd("BufEnter", {
---   pattern = "*",
---   callback = function()
---     local current_path = vim.fn.expand("%:p:h") -- Get current file's directory
---     local target_path = "/home/aarondev/Documents/Code/PersonalProjects/JobSeek"
---
---     -- Check if current path is within the target directory
---     if string.find(current_path, target_path, 1, true) then
---       vim.g.copilot_enabled = false -- Disable Copilot
---       print("Copilot disabled")
---     else
---       vim.g.copilot_enabled = true -- Re-enable elsewhere
---     end
---   end,
--- })
+-- [[ Basic Autocommands ]]
+local autocmd = vim.api.nvim_create_autocmd
 
--- Disable autoformat for markdown files
-vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "markdown" },
+local function augroup(name)
+  return vim.api.nvim_create_augroup('aarondev_' .. name, { clear = true })
+end
+
+-- Highlight on yank
+autocmd('TextYankPost', {
+  group = augroup 'highlight_yank',
   callback = function()
-    vim.b.autoformat = false
+    (vim.hl or vim.highlight).on_yank()
   end,
 })
 
--- Disable diagnostics in markdown files
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "markdown" },
+-- resize splits if window got resized
+autocmd({ 'VimResized' }, {
+  group = augroup 'resize_splits',
   callback = function()
-    vim.diagnostic.enable(false) -- Disable all diagnostics
-    -- OR to keep other LSP features while just hiding diagnostics:
-    vim.diagnostic.config({
-      virtual_text = false,
-      signs = false,
-      underline = false,
-      update_in_insert = false,
-    })
+    local current_tab = vim.fn.tabpagenr()
+    vim.cmd 'tabdo wincmd ='
+    vim.cmd('tabnext ' .. current_tab)
   end,
 })
 
--- Python print
-vim.api.nvim_create_autocmd({ "FileType", "BufEnter", "BufWinEnter" }, {
-  pattern = { "python" },
-  callback = function()
-    vim.keymap.set("n", "<leader>cl", function()
-      local var = vim.fn.expand("<cword>")
-      if var ~= "" then
-        local row = vim.api.nvim_win_get_cursor(0)[1]
-        local indent = vim.api.nvim_get_current_line():match("^%s*") or ""
-        local debug_line = indent .. 'print(f"[L#{' .. row .. "}] " .. var .. ": { " .. var .. ' }")'
-        vim.api.nvim_buf_set_lines(0, row, row, false, { debug_line })
-      end
-    end, { buffer = true, desc = "Python debug print" })
+-- close some filetypes with <q>
+autocmd('FileType', {
+  group = augroup 'close_with_q',
+  pattern = {
+    'PlenaryTestPopup',
+    'checkhealth',
+    'dbout',
+    'gitsigns-blame',
+    'grug-far',
+    'help',
+    'lspinfo',
+    'neotest-output',
+    'neotest-output-panel',
+    'neotest-summary',
+    'notify',
+    'qf',
+    'spectre_panel',
+    'startuptime',
+    'tsplayground',
+  },
+  callback = function(event)
+    vim.bo[event.buf].buflisted = false
+    vim.schedule(function()
+      vim.keymap.set('n', 'q', function()
+        vim.cmd 'close'
+        pcall(vim.api.nvim_buf_delete, event.buf, { force = true })
+      end, {
+        buffer = event.buf,
+        silent = true,
+        desc = 'Quit buffer',
+      })
+    end)
   end,
 })
 
--- Java print
-vim.api.nvim_create_autocmd({ "FileType", "BufEnter", "BufWinEnter" }, {
-  pattern = { "java" },
-  callback = function()
-    vim.keymap.set("n", "<leader>cl", function()
-      local var = vim.fn.expand("<cword>")
-      if var ~= "" then
-        local row = vim.api.nvim_win_get_cursor(0)[1]
-        local indent = vim.api.nvim_get_current_line():match("^%s*") or ""
-        local debug_line = indent .. 'System.out.println("' .. var .. " [L" .. row .. ']: " + ' .. var .. ");"
-        vim.api.nvim_buf_set_lines(0, row, row, false, { debug_line })
-      end
-    end, { buffer = true, desc = "Python debug print" })
+-- Auto create dir when saving a file, in case some intermediate directory does not exist
+autocmd({ 'BufWritePre' }, {
+  group = augroup 'auto_create_dir',
+  callback = function(event)
+    if event.match:match '^%w%w+:[\\/][\\/]' then
+      return
+    end
+    local file = vim.uv.fs_realpath(event.match) or event.match
+    vim.fn.mkdir(vim.fn.fnamemodify(file, ':p:h'), 'p')
   end,
 })
 
--- javascript console.log
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
-  callback = function()
-    vim.keymap.set("n", "<leader>cl", function()
-      local var = vim.fn.expand("<cword>")
-      if var ~= "" then
-        local row = vim.api.nvim_win_get_cursor(0)[1]
-        local indent = vim.api.nvim_get_current_line():match("^%s*") or ""
-        local debug_line = indent .. "console.log(`[L#${" .. row .. "}] " .. var .. ": `, " .. var .. ");"
-        vim.api.nvim_buf_set_lines(0, row, row, false, { debug_line })
-      end
-    end, { buffer = true, desc = "Insert debug console.log below" })
-  end,
+-- Automatically check for file changes when switching buffers or focusing Neovim
+autocmd({ 'FocusGained', 'BufEnter', 'CursorHold' }, {
+  group = augroup 'autoread',
+  pattern = '*',
+  command = 'checktime',
 })
 
--- Markdown bold
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "markdown",
-  callback = function()
-    -- In visual mode, with words selected
-    vim.keymap.set("v", "<C-b>", 'c**<C-r>"**<Esc>', {
-      buffer = true,
-      desc = "Wrap selection with ** for bold",
-    })
-
-    -- In normal mode
-    vim.keymap.set("n", "<C-b>", 'viwc**<C-r>"**<Esc>', {
-      buffer = true,
-      desc = "Wrap word with ** for bold",
-    })
-  end,
-})
-
--- Markdown italic
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "markdown",
-  callback = function()
-    -- In visual mode, with words selected
-    vim.keymap.set("v", "<C-i>", 'c*<C-r>"*<Esc>', {
-      buffer = true,
-      desc = "Wrap selection with * for italic",
-    })
-
-    -- In normal mode
-    vim.keymap.set("n", "<C-i>", 'viwc*<C-r>"*<Esc>', {
-      buffer = true,
-      desc = "Wrap word with * for italic",
-    })
-  end,
-})
+require 'config.autocmds.languages'

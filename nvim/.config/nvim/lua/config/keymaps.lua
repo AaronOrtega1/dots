@@ -1,24 +1,52 @@
-local keymap = vim.keymap
-local opts = { noremap = true }
+local map = vim.keymap.set
+local ignore_wk = { desc = 'which_key_ignore' }
 
-keymap.set("n", "<Leader>;", ":", { noremap = true, desc = "Enter Command Line" })
+-- [[ Basic Keymaps ]]
 
--- Save all file with <C-s>
-keymap.set("n", "<C-s>", ":wa<Return>", { noremap = true, desc = "Save all files", silent = true })
+map('n', '<Esc>', '<cmd>nohlsearch<CR>') -- Clear highlights on search when pressing <Esc> in normal mode
+-- map('n', '<leader>e', ':Ex<CR>', { desc = 'which_key_ignore', silent = true }) -- Open Netrw
+map('n', '<leader>;', ':', ignore_wk) -- Easy way to input commands
+map({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>wa<cr><esc>', { desc = 'Save Files' }) -- Save files
+map('n', '<leader>qq', '<cmd>qa<cr>', ignore_wk) -- Quit all
+map('n', '<leader>wd', '<C-W>c', { desc = '[W]indow [D]elete' }) -- Delete window
 
--- Toggle folding with za in normal mode
-keymap.set("n", "za", "za", opts)
--- Esc from Insert mode with jj
-keymap.set("i", "jj", "<Esc>", { noremap = true, desc = "Escape insert mode", silent = true })
+-- better up/down
+map({ 'n', 'x' }, 'j', "v:count == 0 ? 'gj' : 'j'", { desc = 'Down', expr = true, silent = true })
+map({ 'n', 'x' }, '<Down>', "v:count == 0 ? 'gj' : 'j'", { desc = 'Down', expr = true, silent = true })
+map({ 'n', 'x' }, 'k', "v:count == 0 ? 'gk' : 'k'", { desc = 'Up', expr = true, silent = true })
+map({ 'n', 'x' }, '<Up>', "v:count == 0 ? 'gk' : 'k'", { desc = 'Up', expr = true, silent = true })
 
--- Center cursor line when using <C-d>/<C-u>
-keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true, desc = "Center cursor when <C-d>", silent = true })
-keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true, desc = "Center cursor when <C-d>", silent = true })
+-- Keybinds to make split navigation easier.
+map('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+map('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+map('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+map('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
--- Better indenting in visual mode
-keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })
-keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
+map('n', '<leader>l', '<cmd>Lazy<cr>', { desc = '[L]azy' }) -- lazy
 
--- Center cursors when searching
-keymap.set("n", "n", "nzzzv", { noremap = true, desc = "Center cursor when <C-d>", silent = true })
-keymap.set("n", "N", "Nzzzv", { noremap = true, desc = "Center cursor when <C-d>", silent = true })
+-- Better moving lines in visual mode
+map('v', 'J', ":m '>+1<CR>gv=gv", { silent = true })
+map('v', 'K', ":m '<-2<CR>gv=gv", { silent = true })
+
+-- Center cursor when jumping
+map('n', '<C-d>', '<C-d>zz')
+map('n', '<C-u>', '<C-u>zz')
+map('n', 'n', 'nzzzv')
+map('n', 'N', 'Nzzzv')
+
+-- better up/down
+map({ 'n', 'x' }, 'j', "v:count == 0 ? 'gj' : 'j'", { desc = 'Down', expr = true, silent = true })
+map({ 'n', 'x' }, '<Down>', "v:count == 0 ? 'gj' : 'j'", { desc = 'Down', expr = true, silent = true })
+map({ 'n', 'x' }, 'k', "v:count == 0 ? 'gk' : 'k'", { desc = 'Up', expr = true, silent = true })
+map({ 'n', 'x' }, '<Up>', "v:count == 0 ? 'gk' : 'k'", { desc = 'Up', expr = true, silent = true })
+
+-- better indenting
+map('x', '<', '<gv')
+map('x', '>', '>gv')
+
+map('x', '<leader>p', [["_dP]], ignore_wk) -- Paste over a selection without losing your current yank.
+
+-- OIL (trying)
+map('n', '<leader>e', function()
+  require('oil').open_float(vim.fn.expand '%:p:h')
+end, { desc = '[E]xplorer', silent = true })
