@@ -29,15 +29,15 @@ return {
             mode = mode or 'n'
             vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = desc })
           end
-          map('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
-          map('gr', vim.lsp.buf.references, '[G]oto [R]eferences')
-          map('gi', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
-          map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+          map('gd', vim.lsp.buf.definition, 'Goto [D]efinition')
+          map('gr', vim.lsp.buf.references, 'Goto [R]eferences')
+          map('gi', vim.lsp.buf.implementation, 'Goto [I]mplementation')
+          map('gD', vim.lsp.buf.declaration, 'Goto [D]eclaration')
           map('gy', vim.lsp.buf.type_definition, 'Goto T[y]pe Definition')
           map('K', function()
             return vim.lsp.buf.hover()
           end, '[K]Hover')
-          map('<leader>ca', vim.lsp.buf.code_action, 'Goto [C]ode [A]ction', { 'n', 'x' })
+          map('<leader>ca', vim.lsp.buf.code_action, 'Goto Code [A]ction', { 'n', 'x' })
 
           -- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
           ---@param client vim.lsp.Client

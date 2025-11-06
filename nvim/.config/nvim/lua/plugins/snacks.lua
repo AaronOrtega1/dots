@@ -68,49 +68,56 @@ return {
         function()
           Snacks.picker.files()
         end,
-        desc = '[F]ind [F]iles',
+        desc = 'Find [F]iles',
       },
       {
         '<leader>fg',
         function()
           Snacks.picker.git_files()
         end,
-        desc = '[F]ind [F]iles ([g]it-files)',
+        desc = 'Find Files ([G]it-files)',
       },
       {
         '<leader>fb',
         function()
           Snacks.picker.buffers()
         end,
-        desc = '[F]ind [B]uffers',
+        desc = 'Find [B]uffers',
       },
       {
         '<leader>fp',
         function()
           Snacks.picker.projects()
         end,
-        desc = '[F]ind [P]rojects',
+        desc = 'Find [P]rojects',
       },
       {
         '<leader>sg',
         function()
           Snacks.picker.grep()
         end,
-        desc = '[S]earch [G]rep',
+        desc = 'Search [G]rep',
       },
       {
         '<leader>sh',
         function()
           Snacks.picker.help()
         end,
-        desc = '[S]earch [H]elp',
+        desc = 'Search [H]elp',
       },
       {
         '<leader>sk',
         function()
           Snacks.picker.keymaps()
         end,
-        desc = '[S]earch [K]eymaps',
+        desc = 'Search [K]eymaps',
+      },
+      {
+        '<leader>bd',
+        function()
+          Snacks.bufdelete()
+        end,
+        desc = 'Buffer [D]elete',
       },
 
       -- {

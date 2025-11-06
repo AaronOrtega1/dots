@@ -24,7 +24,6 @@ return {
       ['<esc>'] = { 'actions.close', mode = 'n' },
       ['g?'] = { 'actions.show_help', mode = 'n' },
       ['<CR>'] = 'actions.select',
-      ['<C-a>'] = { 'actions.select', opts = { horizontal = true } },
       ['<C-v>'] = { 'actions.select', opts = { vertical = true } },
       ['<C-p>'] = 'actions.preview',
       ['<C-r>'] = 'actions.refresh',

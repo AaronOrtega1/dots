@@ -68,7 +68,7 @@ alias code='env GDK_BACKEND=wayland OZONE_PLATFORM=wayland code --enable-feature
 alias fastfetch='pokeget gengar --hide-name | fastfetch --logo-padding-top 4 --file-raw -'
 alias om='sh $HOME/.local/bin/quest-archiver.sh'
 alias nvim-kickstart='NVIM_APPNAME="nvim-kickstart" nvim'
-alias trash='/home/aarondev/.local/share/Trash'
+alias trash='rm -rf $HOME/.local/share/Trash/files/* $HOME/.local/share/Trash/info/*'
 
 # Shell integration
 eval "$(fzf --zsh)"

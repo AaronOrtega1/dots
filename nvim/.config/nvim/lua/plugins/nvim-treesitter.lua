@@ -10,6 +10,7 @@ return {
         'c',
         'diff',
         'html',
+        'graphql',
         'css',
         'javascript',
         'typescript',

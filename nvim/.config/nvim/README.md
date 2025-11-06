@@ -99,13 +99,15 @@
 
 | Key               | Description        | Mode |
 | ----------------- | ------------------ | ---- |
-| `<leader><space>` | [S]earch [F]iles   | n    |
-| `<leader>sf`      | [S]earch [F]iles   | n    |
-| `<leader>sb`      | [S]earch [B]uffers | n    |
+| `<leader><space>` | [F]ind [F]iles   | n    |
+| `<leader>ff`      | [F]ind [F]iles   | n    |
+| `<leader>fg`      | [F]ind [F]iles ([g]it-files)   | n    |
+| `<leader>fb`      | [F]ind [B]uffers | n    |
 | `<leader>fp`      | [F]ind [P]rojects  | n    |
 | `<leader>sg`      | [S]earch [G]rep    | n    |
 | `<leader>sh`      | [S]earch [H]elp    | n    |
 | `<leader>sk`      | [S]earch [K]eymaps | n    |
+| `<leader>bd`      | [B]uffer [D]elete | n    |
 
 ### conform.nvim
 | Key         | Description     | Mode |

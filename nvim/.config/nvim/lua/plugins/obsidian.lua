@@ -63,11 +63,11 @@ return {
   config = function(_, opts)
     require('obsidian').setup(opts)
     local custom_obsidian = require 'plugins.config.obsidian'
-    vim.keymap.set('n', '<leader>on', custom_obsidian.create_new_note, { desc = '[O]bsidian [N]ote' })
-    vim.keymap.set('n', '<leader>od', ':Obsidian today<CR>', { desc = '[O]bsidian Today [D]aily Note' })
-    vim.keymap.set('n', '<leader>ob', ':Obsidian backlinks<CR>', { desc = '[O]bsidian [B]acklinks' })
-    vim.keymap.set('n', '<leader>ot', ':Obsidian tags<CR>', { desc = '[O]bsidian [T]ags' })
-    vim.keymap.set('n', '<leader>oo', ':Obsidian open<CR>', { desc = '[O]bsidian [O]pen' })
+    vim.keymap.set('n', '<leader>on', custom_obsidian.create_new_note, { desc = 'Obsidian [N]ote', silent = true })
+    vim.keymap.set('n', '<leader>od', ':Obsidian today<CR>', { desc = 'Obsidian Today [D]aily Note', silent = true })
+    vim.keymap.set('n', '<leader>ob', ':Obsidian backlinks<CR>', { desc = 'Obsidian [B]acklinks', silent = true })
+    vim.keymap.set('n', '<leader>ot', ':Obsidian tags<CR>', { desc = 'Obsidian [T]ags', silent = true })
+    vim.keymap.set('n', '<leader>oo', ':Obsidian open<CR>', { desc = 'Obsidian [O]pen', silent = true })
     vim.keymap.set('n', '<leader>ct', function()
       local line = vim.api.nvim_get_current_line()
       if line:match '^- %[[ x]%]' then
@@ -76,6 +76,6 @@ return {
         end)
         vim.api.nvim_set_current_line(new_line)
       end
-    end, { desc = '[C]hecklist [T]oggle' })
+    end, { desc = 'Checklist [T]oggle' })
   end,
 }
