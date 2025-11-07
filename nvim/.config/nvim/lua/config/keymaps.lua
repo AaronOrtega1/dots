@@ -67,6 +67,6 @@ vim.keymap.set('n', '<leader>t1', '<cmd>silent !tmux select-window -t 1<CR>', { 
 vim.keymap.set('n', '<leader>t2', '<cmd>silent !tmux select-window -t 2<CR>', { desc = '[2] Tmux Code Window' }) -- code
 vim.keymap.set('n', '<leader>t3', '<cmd>silent !tmux select-window -t 3<CR>', { desc = '[3] Tmux Commands Window' }) -- commands
 
-vim.keymap.set('n', '<leader>th', '<cmd>silent !tmux select-window -t 1<CR>', { desc = '[k] Tmux Notes Window' }) -- notes
-vim.keymap.set('n', '<leader>tj', '<cmd>silent !tmux select-window -t 2<CR>', { desc = '[k] Tmux Code Window' }) -- code
+vim.keymap.set('n', '<leader>th', '<cmd>silent !tmux select-window -t 1<CR>', { desc = '[h] Tmux Notes Window' }) -- notes
+vim.keymap.set('n', '<leader>tj', '<cmd>silent !tmux select-window -t 2<CR>', { desc = '[j] Tmux Code Window' }) -- code
 vim.keymap.set('n', '<leader>tk', '<cmd>silent !tmux select-window -t 3<CR>', { desc = '[k] Tmux Commands Window' }) -- commands
