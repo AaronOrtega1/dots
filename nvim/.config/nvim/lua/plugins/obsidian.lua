@@ -68,14 +68,6 @@ return {
     vim.keymap.set('n', '<leader>ob', ':Obsidian backlinks<CR>', { desc = 'Obsidian [B]acklinks', silent = true })
     vim.keymap.set('n', '<leader>ot', ':Obsidian tags<CR>', { desc = 'Obsidian [T]ags', silent = true })
     vim.keymap.set('n', '<leader>oo', ':Obsidian open<CR>', { desc = 'Obsidian [O]pen', silent = true })
-    vim.keymap.set('n', '<leader>ct', function()
-      local line = vim.api.nvim_get_current_line()
-      if line:match '^- %[[ x]%]' then
-        local new_line = line:gsub('%- %[([ x])%]', function(match)
-          return match == ' ' and '- [x]' or '- [ ]'
-        end)
-        vim.api.nvim_set_current_line(new_line)
-      end
-    end, { desc = 'Checklist [T]oggle' })
+    vim.keymap.set('n', '<leader>ct', custom_obsidian.toggle_checklist, { desc = 'Checklist [T]oggle' })
   end,
 }

@@ -79,7 +79,7 @@
       ]
     },
     "clock": {
-      "format": "{:%I:%M}",
+      "format": "{:%d-%b | %I:%M}",
       // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
       "tooltip-format": "<tt>{calendar}</tt>",
       "calendar": {
@@ -309,7 +309,7 @@
       ]
     },
     "clock": {
-      "format": "{:%I:%M}",
+      "format": "{:%d-%b | %I:%M}",
       // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
       "tooltip-format": "<tt>{calendar}</tt>",
       "calendar": {

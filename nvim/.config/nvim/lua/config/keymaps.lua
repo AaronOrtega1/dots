@@ -63,10 +63,12 @@ map('n', '<leader>e', function()
 end, { desc = '[E]xplorer', silent = true })
 
 -- Navigate to specific tmux window
-vim.keymap.set('n', '<leader>t1', '<cmd>silent !tmux select-window -t 1<CR>', { desc = '[1] Tmux Notes Window' }) -- notes
-vim.keymap.set('n', '<leader>t2', '<cmd>silent !tmux select-window -t 2<CR>', { desc = '[2] Tmux Code Window' }) -- code
-vim.keymap.set('n', '<leader>t3', '<cmd>silent !tmux select-window -t 3<CR>', { desc = '[3] Tmux Commands Window' }) -- commands
+vim.keymap.set('n', '<leader>t1', '<cmd>silent !tmux select-window -t 1<CR>', { desc = 'Tmux [1]Notes Window' }) -- notes
+vim.keymap.set('n', '<leader>t2', '<cmd>silent !tmux select-window -t 2<CR>', { desc = 'Tmux [2]Code Window' }) -- code
+vim.keymap.set('n', '<leader>t3', '<cmd>silent !tmux select-window -t 3<CR>', { desc = 'Tmux [3] Commands Window' }) -- commands
 
-vim.keymap.set('n', '<leader>th', '<cmd>silent !tmux select-window -t 1<CR>', { desc = '[h] Tmux Notes Window' }) -- notes
-vim.keymap.set('n', '<leader>tj', '<cmd>silent !tmux select-window -t 2<CR>', { desc = '[j] Tmux Code Window' }) -- code
-vim.keymap.set('n', '<leader>tk', '<cmd>silent !tmux select-window -t 3<CR>', { desc = '[k] Tmux Commands Window' }) -- commands
+vim.keymap.set('n', '<leader>th', '<cmd>silent !tmux select-window -t 1<CR>', { desc = 'Tmux [h]Notes Window' }) -- notes
+vim.keymap.set('n', '<leader>tj', '<cmd>silent !tmux select-window -t 2<CR>', { desc = 'Tmux [j]Code Window' }) -- code
+vim.keymap.set('n', '<leader>tk', '<cmd>silent !tmux select-window -t 3<CR>', { desc = 'Tmux [k]Commands Window' }) -- commands
+
+vim.keymap.set('n', '<leader>r', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = '[R]eplace' })

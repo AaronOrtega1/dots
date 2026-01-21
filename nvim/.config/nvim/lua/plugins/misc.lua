@@ -35,15 +35,4 @@ return {
       },
     },
   },
-  { -- Rename
-    'smjonas/inc-rename.nvim',
-    opts = {},
-    config = function()
-      require 'inc_rename'
-      local map = vim.keymap.set
-      map('n', '<leader>cr', function()
-        return ':IncRename ' .. vim.fn.expand '<cword>'
-      end, { desc = '[R]ename', expr = true })
-    end,
-  },
 }

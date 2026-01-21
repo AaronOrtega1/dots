@@ -11,6 +11,7 @@ local templates = {
   { name = 'Technique', template = 'techniques.md', target_dir = '02-Library' },
   { name = 'Algorithmic Grimoire Entry', template = 'algorithmic-grimoire.md', target_dir = '02-Library' },
   { name = 'AWS Question', template = 'awsQuestion.md', target_dir = '02-Library' },
+  { name = 'DSA method', template = 'methods.md', target_dir = '02-Library' },
 }
 
 local function get_obsidian()
@@ -20,6 +21,16 @@ local function get_obsidian()
     return nil
   end
   return obsidian
+end
+
+M.toggle_checklist = function()
+  local line = vim.api.nvim_get_current_line()
+  if line:match '^%s*- %[[ x]%]' then
+    local new_line = line:gsub('(- %[)([ x])(%])', function(prefix, check, suffix)
+      return prefix .. (check == ' ' and 'x' or ' ') .. suffix
+    end)
+    vim.api.nvim_set_current_line(new_line)
+  end
 end
 
 M.create_new_note = function()
@@ -46,19 +57,28 @@ M.create_new_note = function()
       return
     end
 
+    -- Special case: Training Session -> auto-generate title
+    if choice.name == 'Training Session' then
+      local date_str = os.date 'training-session-%Y-%m-%d'
+      local note_path = string.format('%s/%s', choice.target_dir, date_str)
+      local create_cmd = string.format('Obsidian new_from_template %s %s', note_path, choice.template)
+
+      vim.cmd(create_cmd)
+      vim.notify(string.format("Created note '%s' from template '%s'", note_path, choice.template), vim.log.levels.INFO)
+      return
+    end
+
+    -- Default behavior for other templates
     vim.ui.input({ prompt = 'Enter note title: ' }, function(title)
       if not title or title == '' then
         vim.notify('Note creation cancelled (no title)', vim.log.levels.WARN)
         return
       end
 
-      -- Construct full relative path: "target_dir/title"
       local note_path = string.format('%s/%s', choice.target_dir, title)
       local create_cmd = string.format('Obsidian new_from_template %s %s', note_path, choice.template)
 
-      -- Execute Obsidian command
       vim.cmd(create_cmd)
-
       vim.notify(string.format("Created note '%s' from template '%s'", note_path, choice.template), vim.log.levels.INFO)
     end)
   end)

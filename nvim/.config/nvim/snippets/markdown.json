@@ -8,5 +8,10 @@
     "prefix": "quiz",
     "body": "- ${1:question};;${2:answer}",
     "description": "Question for quiz template"
-  }
+  },
+  "Checklist": {
+    "prefix": ["cl", "checklist"],
+    "body": "- [ ] ${1:task}",
+    "description": "TODO checlist"
+  },
 }

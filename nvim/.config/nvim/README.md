@@ -38,7 +38,6 @@
 - nvim-ts-autotag
 - conform.nvim
 - guess-indent.nvim
-- inc-rename.nvim
 - flash.nvim
 - nvim-ufo
 - promise-async
@@ -206,12 +205,6 @@
 | `<C-k>` | Navigate up            | n    |
 | `<C-l>` | Navigate right         | n    |
 | `<C-\>` | Navigate previous pane | n    |
-
-### inc-rename
-
-| Key     | Description            | Mode |
-| ------- | ---------------------- | ---- |
-| `<leader>cr` | Rename word under cursor          | n    |
 
 ## Credits
 - The base of my config is from [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim/tree/master), which I modulized and added some plugins of my own, with some keybind and autocmd from [LazyVim](https://www.lazyvim.org/).

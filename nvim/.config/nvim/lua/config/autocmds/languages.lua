@@ -14,19 +14,13 @@ autocmd({ 'FileType' }, {
   end,
 })
 
--- Disable diagnostics in markdown files
+-- Underline misspelled words en/es
 autocmd('FileType', {
-  group = augroup 'markdown',
+  group = augroup 'markdown_spell',
   pattern = { 'markdown' },
   callback = function()
-    vim.diagnostic.enable(false) -- Disable all diagnostics
-    -- OR to keep other LSP features while just hiding diagnostics:
-    vim.diagnostic.config {
-      virtual_text = false,
-      signs = false,
-      underline = false,
-      update_in_insert = false,
-    }
+    vim.opt_local.spell = true
+    vim.opt_local.spelllang = 'en,es'
   end,
 })
 
