@@ -118,5 +118,8 @@ export CONDA_CHANGEPS1="false"
 # Cargo
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# Local
+export PATH="$HOME/.local/bin:$PATH"
+
 # Zoxide
 eval "$(zoxide init --cmd cd zsh)"

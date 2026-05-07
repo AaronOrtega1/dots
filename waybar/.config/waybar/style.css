@@ -1,60 +1,52 @@
-/* colors defined at top for easy configuring */
-@define-color background        #1E1E2E;
-@define-color text              #CDD6F4;
-@define-color empty             #7F849C;
-@define-color borders           #5E81AC;
-@define-color focused           #89B4FA;
-@define-color urgent            #F38BA8;
-@define-color hover             #CBA6F7;
-
+@import "current-theme.css";
 
 /* font declared */
 * {
-    font-family: "JetBrainsMono Nerd Font";
-    font-size: 15px;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 15px;
 }
 
 #custom-openbracket,
-#custom-closebracket{
-    margin: 0 5px ;
+#custom-closebracket {
+  margin: 0 5px;
 }
 
 window#waybar {
-    background-color: transparent;
-    margin: 4px 0 0 4px;
-    border-bottom: 0;
-    color: @text;
-    transition: background-color 0.5s;
+  background-color: transparent;
+  margin: 4px 0 0 4px;
+  border-bottom: 0;
+  color: @text;
+  transition: background-color 0.5s;
 }
 
 window#waybar.hidden {
-    opacity: 0.2;
+  opacity: 0.2;
 }
 
 window#waybar.empty #window {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 /* configuring the modules */
 .modules-left {
-    margin: 8px 0 0 8px;
-    padding: 0 7px 0 7px;
-    background-color: @background;
-    border: 2px solid @borders;
+  margin: 8px 0 0 8px;
+  padding: 0 7px 0 7px;
+  background-color: @background;
+  border: 2px solid @borders;
 }
 
 .modules-center {
-    margin: 8px 0 0 0;
-    padding: 0 10px 0 10px;
-    background-color: @background;
-    border: 2px solid @borders;
+  margin: 8px 0 0 0;
+  padding: 0 10px 0 10px;
+  background-color: @background;
+  border: 2px solid @borders;
 }
 
 .modules-right {
-    margin: 8px 8px 0 0;
-    padding: 0 10px 0 10px;
-    background-color: @background;
-    border: 2px solid @borders;
+  margin: 8px 8px 0 0;
+  padding: 0 10px 0 10px;
+  background-color: @background;
+  border: 2px solid @borders;
 }
 
 /*
@@ -82,18 +74,17 @@ window#waybar.empty #window {
   color: @focused;
 }
 #workspaces button.urgent {
-    color: @urgent;
+  color: @urgent;
 }
-
 
 /* media player */
 #mpris {
-    padding: 0 4px ;
-    color: @text;
+  padding: 0 4px;
+  color: @text;
 }
 #mpris.playing {
-    background-color: @background;
-    color: @text;
+  background-color: @background;
+  color: @text;
 }
 
 /*
@@ -101,8 +92,8 @@ window#waybar.empty #window {
  * CENTER
  * ========================================
  */
-#window{
-    padding: 0 5px;
+#window {
+  padding: 0 5px;
 }
 
 /*
@@ -119,7 +110,7 @@ window#waybar.empty #window {
 #pulseaudio,
 #custom-bluetooth,
 #network {
-  padding: 0 10px ;
+  padding: 0 10px;
 }
 
 #battery:hover,
@@ -127,20 +118,19 @@ window#waybar.empty #window {
 #network:hover,
 #pulseaudio:hover,
 #custom-bluetooth:hover,
-#backlight:hover{
-    color: @hover;
+#backlight:hover {
+  color: @hover;
 }
-
 
 /* Remaining Modules */
 #backlight,
-#wireplumber{
-    padding: 0 5px;
+#wireplumber {
+  padding: 0 5px;
 }
 
 #battery.charging,
 #battery.plugged {
-  background-color: @borders ;
+  background-color: @borders;
   color: @background;
 }
 

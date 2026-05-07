@@ -14,7 +14,7 @@ Environment=PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin
 # IOSchedulingClass=realtime
 # Nice=-20
 Type=simple
-ExecStart=/sbin/sh -c 'exec $$(which kanata) --cfg $${HOME}/.config/kanata/kanata.kbd'
+ExecStart=/sbin/sh -c 'exec $$(which kanata) --cfg $${HOME}/.config/kanata/config.kbd'
 Restart=no
 
 [Install]

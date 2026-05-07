@@ -25,7 +25,7 @@ return {
       },
     },
   },
-  { -- Raindow delimiters for easier understanding.
-    'hiphish/rainbow-delimiters.nvim',
-  },
+  -- { -- Raindow delimiters for easier understanding.
+  --   'hiphish/rainbow-delimiters.nvim',
+  -- },
 }

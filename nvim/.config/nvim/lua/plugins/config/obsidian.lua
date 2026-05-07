@@ -2,7 +2,7 @@ local M = {}
 
 local templates = {
   { name = 'Quest', template = 'quest.md', target_dir = '00-Quests' },
-  { name = 'Domain', template = 'domain.md', target_dir = '01-Domain' },
+  { name = 'Domain', template = 'domain.md', target_dir = '01-Domains' },
   { name = 'Knowledge', template = 'knowledge.md', target_dir = '02-Library' },
   { name = 'Smithing', template = 'smithing.md', target_dir = '04-Forge' },
   { name = 'Pending', template = 'pending.md', target_dir = '02-Library' },
