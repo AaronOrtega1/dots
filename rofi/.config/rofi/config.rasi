@@ -35,4 +35,4 @@ configuration {
     max-history-size: 25;
 }
 
-@theme "~/.config/rofi/themes/custom.rasi"
+@theme "~/.config/rofi/current-theme.rasi"

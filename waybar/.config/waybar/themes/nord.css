@@ -1,0 +1,7 @@
+@define-color background #2E3440;
+@define-color text       #ECEFF4;
+@define-color empty      #4C566A;
+@define-color borders    #5E81AC;
+@define-color focused    #88C0D0;
+@define-color urgent     #BF616A;
+@define-color hover      #81A1C1;
