@@ -22,9 +22,11 @@ ln -sf "$THEME_DIR/$SELECTED.sh" \
 ~/.config/themes/generate/generate-hypr.sh
 ~/.config/themes/generate/generate-waybar.sh
 ~/.config/themes/generate/generate-rofi.sh
+~/.config/themes/generate/generate-dunst.sh
 # ~/.config/themes/generate/generate-starship.sh
 
 # Reload
 # hyprctl reload
 bash ~/.config/waybar/scripts/restart-waybar.sh
+dunstctl reload
 notify-send "Theme Changed" "$SELECTED"

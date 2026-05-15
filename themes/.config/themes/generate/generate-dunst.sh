@@ -1,0 +1,55 @@
+# ~/.config/themes/generate/generate-dunst.sh
+
+#!/bin/bash
+
+source "$HOME/.config/themes/current-theme.sh"
+
+cat > "$HOME/.config/dunst/dunstrc" <<EOF
+[global]
+    font = JetBrainsMono Nerd Font 10
+    frame_width = 2
+    separator_height = 2
+    padding = 10
+    horizontal_padding = 12
+    corner_radius = 0
+    transparency = 10
+    gap_size = 6
+    sort = yes
+    indicate_hidden = yes
+    shrink = no
+    follow = mouse
+    mouse_left_click = do_action, close_current
+    mouse_middle_click = close_current
+    mouse_right_click = close_all
+    monitor = -1
+    alignment = left
+    vertical_alignment = top
+    word_wrap = yes
+    show_age_threshold = 60
+    ellipsize = middle
+
+    # === Icons ===
+    icon_theme = Papirus
+    enable_recursive_icon_lookup = true
+    icon_position = left
+    max_icon_size = 32
+    min_icon_size = 24
+
+[urgency_low]
+    background = "$BACKGROUND"
+    foreground = "$TEXT"
+    frame_color = "$COMMENT"
+    timeout = 5
+
+[urgency_normal]
+    background = "$BACKGROUND"
+    foreground = "$TEXT"
+    frame_color = "$FOCUSED"
+    timeout = 8
+
+[urgency_critical]
+    background = "$BACKGROUND"
+    foreground = "$TEXT"
+    frame_color = "$URGENT"
+    timeout = 0
+EOF
