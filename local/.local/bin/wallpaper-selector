@@ -1,0 +1,55 @@
+#!/bin/bash
+
+# =========================
+# Config
+# =========================
+
+WALL_DIR="$HOME/.config/hypr/WallPapers"
+HYPRPAPER_CONF="$HOME/.config/hypr/hyprpaper.conf"
+
+# =========================
+# Wallpaper Selector
+# =========================
+
+SELECTED=$(
+    find "$WALL_DIR" -type f \( \
+        -iname "*.jpg" -o \
+        -iname "*.jpeg" -o \
+        -iname "*.png" -o \
+        -iname "*.webp" \
+    \) | while read -r img; do
+        basename "$img"
+    done | sort | rofi -dmenu \
+        -theme-str 'window {width: 25%;}' \
+        -i \
+        -p "󰸉 Wallpaper"
+)
+
+[ -z "$SELECTED" ] && exit
+
+# =========================
+# Full wallpaper path
+# =========================
+
+WALL_PATH="$WALL_DIR/$SELECTED"
+
+# =========================
+# Rewrite hyprpaper.conf
+# =========================
+
+cat > "$HYPRPAPER_CONF" <<EOF
+wallpaper {
+  monitor =
+  path = $WALL_PATH
+  fit_mode = cover
+}
+
+splash = false
+EOF
+
+# =========================
+# Reload hyprpaper
+# =========================
+
+pkill hyprpaper
+hyprpaper &
