@@ -1,22 +1,3 @@
-* {
-    /* Black & White Minimal */
-
-    bg: #000000;
-    bg-alt: #111111;
-
-    fg: #F5F5F5;
-
-    urgent: #FFFFFF;
-
-    border: #BFBFBF;
-    selected: #FFFFFF;
-
-    comment: #666666;
-
-    background-color: transparent;
-    text-color: @fg;
-}
-
 window {
     background-color: @bg;
     border: 2px;

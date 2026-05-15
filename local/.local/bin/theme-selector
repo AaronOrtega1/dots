@@ -1,0 +1,30 @@
+#!/bin/bash
+
+THEME_DIR="$HOME/.config/themes/themes"
+
+SELECTED=$(
+    find "$THEME_DIR" -type f -name "*.sh" \
+    | xargs -n 1 basename \
+    | sed 's/.sh//' \
+    | sort \
+    | rofi -dmenu \
+        -theme-str 'window {width: 20%;}' \
+        -i \
+        -p "󰔎 Themes"
+)
+
+[ -z "$SELECTED" ] && exit
+
+ln -sf "$THEME_DIR/$SELECTED.sh" \
+       "$HOME/.config/themes/current-theme.sh"
+
+# Generate configs
+~/.config/themes/generate/generate-hypr.sh
+~/.config/themes/generate/generate-waybar.sh
+~/.config/themes/generate/generate-rofi.sh
+# ~/.config/themes/generate/generate-starship.sh
+
+# Reload
+# hyprctl reload
+bash ~/.config/waybar/scripts/restart-waybar.sh
+notify-send "Theme Changed" "$SELECTED"

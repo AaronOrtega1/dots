@@ -1,0 +1,1 @@
+/home/aarondev/.config/themes/themes/purple.sh

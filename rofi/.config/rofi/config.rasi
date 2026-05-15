@@ -36,3 +36,4 @@ configuration {
 }
 
 @theme "~/.config/rofi/current-theme.rasi"
+@import "~/.config/rofi/layout.rasi"

@@ -1,1 +1,16 @@
-/home/aarondev/.config/rofi/themes/purple.rasi
+* {
+    bg: #0B0613;
+    bg-alt: #161022;
+
+    fg: #D8D2FF;
+
+    urgent: #FF4FD8;
+
+    border: #7A2BFF;
+    selected: #C08BFF;
+
+    comment: #5C4675;
+
+    background-color: transparent;
+    text-color: @fg;
+}
