@@ -1,7 +1,6 @@
 [global]
     font = JetBrainsMono Nerd Font 10
     frame_width = 2
-    frame_color = "#313244"
     separator_height = 2
     padding = 10
     horizontal_padding = 12
@@ -16,7 +15,6 @@
     mouse_middle_click = close_current
     mouse_right_click = close_all
     monitor = -1
-    geometry = "400x60-20+20"
     alignment = left
     vertical_alignment = top
     word_wrap = yes
@@ -31,19 +29,19 @@
     min_icon_size = 24
 
 [urgency_low]
-    background = "#1e1e2e"
-    foreground = "#cdd6f4"
-    frame_color = "#313244"
+    background = "#0B0613"
+    foreground = "#D8D2FF"
+    frame_color = "#5C4675"
     timeout = 5
 
 [urgency_normal]
-    background = "#1e1e2e"
-    foreground = "#cdd6f4"
-    frame_color = "#89b4fa"
+    background = "#0B0613"
+    foreground = "#D8D2FF"
+    frame_color = "#C08BFF"
     timeout = 8
 
 [urgency_critical]
-    background = "#1e1e2e"
-    foreground = "#cdd6f4"
-    frame_color = "#f38ba8"
+    background = "#0B0613"
+    foreground = "#D8D2FF"
+    frame_color = "#FF4FD8"
     timeout = 0

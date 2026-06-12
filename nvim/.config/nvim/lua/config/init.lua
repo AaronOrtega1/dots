@@ -6,3 +6,4 @@ require 'config.keymaps'
 
 -- [[ Basic autocmds ]]
 require 'config.autocmds'
+

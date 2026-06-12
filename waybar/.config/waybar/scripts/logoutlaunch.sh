@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Check if wlogout is already running
 if pgrep -x "wlogout" > /dev/null; then
@@ -49,7 +49,8 @@ export active_rad=$(( hypr_border * 5 ))
 export button_rad=$(( hypr_border * 8 ))
 
 # Evaluate config files
-wlStyle=$(envsubst < "$wlTmplt")
+# wlStyle=$(envsubst < "$wlTmplt")
+wlStyle=$(envsubst '${BtnCol} ${mgn} ${hvr} ${x_mgn} ${y_mgn} ${x_hvr} ${y_hvr} ${fntSize} ${active_rad} ${button_rad}' < "$wlTmplt")
 
 # Launch wlogout
 wlogout -b "${wlColms}" -c 0 -r 0 -m 0 --layout "${wLayout}" --css <(echo "${wlStyle}") --protocol layer-shell
